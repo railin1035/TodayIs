@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ghc.tdi_main">
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/bigcircletodayisicon"
+        android:label="오늘은"
+        android:roundIcon="@drawable/bigcircletodayisicon"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme.NoActionBar"
+        >
+        <activity android:name=".Main.activity_main">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Settings.setting_main"></activity>
+        <activity android:name=".Settings.setting_lock"></activity>
+        <activity android:name=".Settings.setting_notice"></activity>
+        <activity android:name=".Settings.setting_appinfo"></activity>
+        <activity android:name=".Memo.memo_list"></activity>
+        <activity android:name=".Memo.memo_edit"></activity>
+        <activity android:name=".Help.help_main"></activity>
+        <activity android:name=".Display.Display_main"></activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/test_trans">
+    <android.support.v7.widget.Toolbar
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:theme="@style/AppTheme"
+        android:id="@+id/app_toolbar">
+        <ImageView
+            android:id="@+id/back_setting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/arrow"
+            android:layout_marginLeft="20dp"
+            />
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:text="도움말"
+            android:textStyle="bold"
+            android:textColor="@color/colorWhite"
+            android:textSize="20dp"
+            />
+    </android.support.v7.widget.Toolbar>
+    <TextView
+        android:id="@+id/text_test"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="컬러피커 테스트"
+        android:layout_marginTop="50dp"/>
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/btn"/>
+
+    <include
+        android:id="@+id/in_memo_edit_textsetting"
+        layout="@layout/memo_edit_textsetting" />
+    <Button
+        android:id="@+id/colorpickertest"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:text="컬러피커셀렉터테스트"/>
+    <TextView
+        android:id="@+id/colorpickertest_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16dp"
+        android:text="컬러피커셀렉트테스트"/>
+    <Button
+        android:id="@+id/testdialog"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:text="다이얼로그테스트"/>
+</LinearLayout>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="150dp"
+    android:layout_height="wrap_content"
+    android:padding="15dp"
+    android:background="@drawable/round_box"
+    android:minWidth="200dp">
+<TextView
+    android:id="@+id/font_dialog_text"
+    android:text="텍스트 크기"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textSize="16dp"
+    android:textColor="@color/colorPrimary"
+    android:layout_marginBottom="15dp"/>
+
+    <ListView
+        android:id="@+id/font_dialog_list"
+        android:layout_width="80dp"
+        android:layout_height="200dp"
+        android:divider="@null"
+        android:dividerHeight="5dp"
+        android:layout_marginLeft="18dp"
+        android:layout_gravity="center"
+        android:listSelector="@drawable/list_bg"
+        android:scrollbars="none"></ListView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="bottom|end">
+        <TextView
+            android:id="@+id/font_dialog_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:textColor="@color/colorPrimary"
+            android:text="취소"/>
+    </LinearLayout>
+</LinearLayout>

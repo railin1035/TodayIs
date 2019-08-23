@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <item
+        android:id="@+id/noalls"
+        android:icon="@drawable/ic_noall"
+        android:title="삭제"
+        app:showAsAction="always"
+        />
+
+ <item
+        android:id="@+id/hindspace2"
+        android:title=""
+        android:enabled="false"
+        app:showAsAction="always"
+
+        />
+
+    <item
+        android:id="@+id/widgets"
+        android:icon="@drawable/ic_widget"
+
+        android:title="위젯"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/them"
+        android:icon="@drawable/ic_theme"
+        android:title="테마"
+
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/colorpick"
+        android:icon="@drawable/ic_colorpicker"
+        android:title="배경"
+        app:showAsAction="always"
+        />
+
+   <item
+         android:id="@+id/hindspace"
+         android:enabled="false"
+         android:title=""
+         app:showAsAction="always"
+         />
+
+
+     <item
+         android:id="@+id/submits"
+         android:icon="@drawable/ic_check_black_24dp"
+         android:title="저장"
+         app:showAsAction="always"/>
+
+     <item
+         android:id="@+id/dele"
+         android:icon="@drawable/ic_close_black_24dp"
+         android:title="삭제"
+         app:showAsAction="always"/>
+
+ </menu>

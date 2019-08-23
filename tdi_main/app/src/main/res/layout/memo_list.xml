@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:toos="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@color/colorMemo">
+    <android.support.v7.widget.Toolbar
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:theme="@style/AppTheme.NoActionBar"
+        android:id="@+id/app_toolbar"
+        >
+        <ImageView
+            android:id="@+id/back_setting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/arrow"
+            android:layout_marginLeft="20dp"
+            />
+        <TextView
+        android:id="@+id/toolbar_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="20dp"
+        android:text="메모"
+        android:textStyle="bold"
+        android:textColor="@color/colorWhite"
+        android:textSize="20dp"
+        />
+    </android.support.v7.widget.Toolbar>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="15dp"
+        >
+      <android.support.v7.widget.RecyclerView
+          android:id="@+id/list_recycle"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:scrollbars="vertical"
+          toos:listitem="@layout/memo_filed"
+          />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/memo_fab_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:backgroundTint="@color/colorPrimary"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="20dp"
+            android:src="@drawable/add_24dp"
+            app:fabSize="normal"
+            app:borderWidth="0dp"
+            ></android.support.design.widget.FloatingActionButton>
+
+
+    </FrameLayout>
+
+</LinearLayout>

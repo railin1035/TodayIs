@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/add_notice"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
+<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="76dp"
+        android:paddingTop="20dp"
+        android:orientation="horizontal"
+        android:background="@color/colorWhite"
+        >
+    <!--공지사항 세로-->
+    <LinearLayout
+        android:layout_width="240dp"
+        android:layout_marginLeft="40dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="공지사항 입니다."
+            android:textSize="15sp"
+            android:letterSpacing="0.03"
+            android:lineSpacingExtra="2.5sp"
+            android:textColor="@color/colorBlack"
+            android:paddingBottom="5dp"
+            android:layout_gravity="left"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2019.07.22"
+            android:textSize="10sp"
+            android:letterSpacing="0.03"
+            android:lineSpacingExtra="1.5sp"
+            android:textColor="@color/colorGrayoff"
+            android:layout_gravity="left"
+            />
+    </LinearLayout>
+    <!--//공지사항 세로-->
+    <!--arrow 위치-->
+    <LinearLayout
+        android:layout_width="110dp"
+        android:layout_height="match_parent"
+        android:paddingLeft="50dp"
+        android:paddingTop="5dp"
+        android:orientation="vertical">
+        <!--arrow-->
+        <ImageView
+            android:id="@+id/add_field_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/under_arrow"
+            android:onClick="onAddField"/>
+        <!--//arrow-->
+    </LinearLayout>
+</LinearLayout>
+    <View
+        android:layout_width="360dp"
+        android:layout_height="1dp"
+        android:layout_gravity="center"
+        android:paddingBottom="1dp"
+        android:background="@color/colorGrayoff"
+        />
+</LinearLayout>

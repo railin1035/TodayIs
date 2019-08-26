@@ -31,6 +31,20 @@
                 android:paddingTop="10dp"
                 android:text="2019.07.24"/>
             <!--오늘 날짜입력-->
+
+            <EditText
+                android:id="@+id/memo_edit_title"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="top"
+                android:textSize="17sp"
+                android:textColor="@color/colorBlack"
+                android:letterSpacing="0.03"
+                android:lineSpacingExtra="5sp"
+                android:padding="15dp"
+                android:hint="제목입력"
+                />
+
     <EditText
         android:id="@+id/memo_edit_contents"
         android:layout_width="match_parent"

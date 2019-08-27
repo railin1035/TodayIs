@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:orientation="vertical">
+
+    <ImageButton
+        android:id="@+id/SignBackbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="21dp"
+        android:layout_marginTop="17dp"
+        android:background="#00ff0000"
+        app:srcCompat="@drawable/ic_signuparrow" />
+
+
+    <!--아이디-->
+
+    <LinearLayout
+        android:layout_width="319.9dp"
+        android:layout_height="25dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="146dp"
+        android:background="@drawable/signupstroke"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:id="@+id/Signicon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
+            app:srcCompat="@drawable/signupiconperson" />
+
+        <EditText
+            android:id="@+id/Sign_id"
+            android:layout_width="224dp"
+            android:layout_height="22dp"
+            android:layout_marginLeft="26dp"
+            android:background="@null"
+            android:hint="아이디"
+            android:textColorHint="#b3b3b3"
+            android:textColor="#b3b3b3"
+            android:textSize="16sp"
+            android:maxLines="1"/>
+
+    </LinearLayout>
+    <!--아이디-->
+
+    <!--비밀번호-->
+    <LinearLayout
+        android:layout_width="319.9dp"
+        android:layout_height="24dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/signupstroke"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:id="@+id/Pass_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1.5dp"
+            android:layout_marginLeft="3dp"
+            app:srcCompat="@drawable/signuplock" />
+
+        <EditText
+            android:id="@+id/Pass_six"
+            android:layout_width="224dp"
+            android:layout_height="22dp"
+            android:layout_marginLeft="22dp"
+            android:background="@null"
+            android:hint="비밀번호 6자 확인"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:textColor="#b3b3b3"
+            android:textColorHint="#b3b3b3"
+            android:textSize="16sp"
+            />
+
+    </LinearLayout>
+    <!--비밀번호-->
+
+    <!--힌트-->
+    <TextView
+        android:id="@+id/Pass_sixCheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="5dp"
+        android:textSize="12sp" />
+    <!--힌트-->
+
+    <!--비밀번호 확인-->
+    <LinearLayout
+        android:layout_width="319.9dp"
+        android:layout_height="24dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/signupstroke"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:id="@+id/Pass_Check"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1.5dp"
+            android:layout_marginLeft="3dp"
+            app:srcCompat="@drawable/signuplock" />
+
+        <EditText
+            android:id="@+id/Pass_textCheck"
+            android:layout_width="224dp"
+            android:layout_height="22dp"
+            android:layout_marginLeft="22dp"
+            android:background="@null"
+            android:hint="비밀번호 확인"
+            android:textColor="#b3b3b3"
+            android:textColorHint="#b3b3b3"
+            android:textSize="16sp"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            />
+
+    </LinearLayout>
+    <!--비밀번호 확인-->
+
+    <!--힌트-->
+    <TextView
+        android:id="@+id/Pass_CheckHint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="5dp"
+        android:textSize="12sp"
+         />
+    <!--힌트-->
+
+    <!--이메일-->
+    <LinearLayout
+        android:layout_width="319.9dp"
+        android:layout_height="25dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/signupstroke"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:id="@+id/Email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="6dp"
+            app:srcCompat="@drawable/signupemail" />
+
+        <EditText
+            android:id="@+id/Email_Text"
+            android:layout_width="224dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="22dp"
+            android:background="@null"
+            android:hint="이메일"
+            android:textColor="#b3b3b3"
+            android:textColorHint="#b3b3b3"
+            android:textSize="16sp"
+            android:maxLines="1"
+            />
+
+    </LinearLayout>
+
+    <!--이메일-->
+
+    <!--체크박스-->
+
+    <LinearLayout
+
+        android:layout_width="wrap_content"
+        android:layout_height="22dp"
+        android:layout_marginLeft="47.3dp"
+        android:layout_marginTop="60dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <Button
+            android:id="@+id/Checked"
+            style="?attr/borderlessButtonStyle"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="2dp"
+            android:background="@drawable/signupcheckbox" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="13dp"
+            android:layout_marginTop="2dp"
+            android:text="이용약관 동의"
+            android:textColor="@color/colorBlack55" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="2dp"
+            android:text="전문보기"
+            android:textColor="#2785d0"
+            android:background="@drawable/signupchecktextcustom"/>
+
+
+    </LinearLayout>
+
+    <!--체크박스-->
+
+    <!--회원가입 확인-->
+    <Button
+        android:id="@+id/signbtn"
+        android:layout_width="250dp"
+        android:layout_height="45dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="91dp"
+        android:background="@drawable/signlogincheck"
+        android:text="회원가입"
+        style="?attr/borderlessButtonStyle"/>
+
+    <!--회원가입 확인-->
+
+</LinearLayout>

@@ -1,7 +1,6 @@
 package com.ghc.tdi_main.Help;
 
 import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -16,9 +15,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
 import com.ghc.tdi_main.Main.activity_main;
@@ -27,7 +24,6 @@ import com.github.furkanozalp.colorpickerdialog.ClickListener;
 import com.github.furkanozalp.colorpickerdialog.ColorPicker;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Locale;
 
 
@@ -35,7 +31,6 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import top.defaults.colorpicker.ColorPickerPopup;
-import top.defaults.colorpicker.ColorPickerView;
 
 public class help_main extends AppCompatActivity {
     private static final String SAVED_STATE_KEY_COLOR = "saved_state_key_color";

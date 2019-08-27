@@ -11,4 +11,6 @@
     <color name="colorGrayoff">#a1a1a1</color>
     <color name="colorMemo">#dfeff6</color>
     <color name="tintPrimary">#95c6ed</color>
+    <color name="firstPrimary">#8095c6ed</color>
+    <color name="colorRed">#ed3434</color>
 </resources>

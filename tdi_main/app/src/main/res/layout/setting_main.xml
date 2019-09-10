@@ -1,245 +1,141 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
+    style="@style/vertical_match_LinearLayout"
     android:background="@color/colorWhite">
     <!--상단 툴바-->
     <android.support.v7.widget.Toolbar
         xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/colorPrimary"
-        android:id="@+id/app_toolbar">
+        style="@style/primary_toolbar"
+        android:id="@+id/setting_app_toolbar">
         <ImageView
-            android:id="@+id/back_setting"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/arrow"
-            android:layout_marginLeft="20dp"
+            style="@style/toolbar_back_btn"
+            android:id="@+id/setting_back_setting"
             />
        <TextView
-           android:id="@+id/toolbar_title"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:paddingLeft="20dp"
+           style="@style/toolbar_text"
+           android:id="@+id/setting_toolbar_title"
            android:text="설정"
-           android:textStyle="bold"
-           android:textColor="@color/colorWhite"
-           android:textSize="20dp"
            />
 </android.support.v7.widget.Toolbar>
     <!--//상단 툴바-->
-    <!--하단 내용-->
+    <!--설정 위화면-->
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="340dp"
-        android:orientation="horizontal"
-        >
-        <!--텍스트 세로-->
-    <LinearLayout
-        android:layout_width="240dp"
-        android:layout_marginLeft="40dp"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="잠금 화면에서 보기"
-            android:layout_marginTop="25dp"
-            android:textSize="17sp"
-            android:textColor="@color/colorBlack"
-            android:layout_gravity="left"
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="상단바에 정보 고정"
-            android:layout_marginTop="29dp"
-            android:textSize="17sp"
-            android:textColor="@color/colorBlack"
-            android:layout_gravity="left"
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="푸시 알림 설정"
-            android:layout_marginTop="29dp"
-            android:textSize="17sp"
-            android:textColor="@color/colorBlack"
-            android:layout_gravity="left"
-            />
-        <TextView
-            android:id="@+id/Notification_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="알림 정보"
-            android:layout_marginTop="29dp"
-            android:textSize="17sp"
-            android:textColor="@color/colorGrayoff"
-            android:layout_gravity="left"
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="정보 업데이트"
-            android:layout_marginTop="29dp"
-            android:textSize="17sp"
-            android:textColor="@color/colorBlack"
-            android:layout_gravity="left"
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="잠금 설정"
-            android:layout_marginTop="29dp"
-            android:textSize="17sp"
-            android:textColor="@color/colorBlack"
-            android:layout_gravity="left"
-            />
+        style="@style/setting_upper_textline_box"
+        android:layout_weight="3">
+            <!--잠금화면에서 보기-->
+             <LinearLayout style="@style/default_match_wrap_Layout">
+                <TextView
+                    style="@style/setting_upper_text"
+                    android:text="잠금 화면에서 보기"
+                    />
+                <Switch
+                    android:id="@+id/lockview_switch"
+                    style="@style/setting_upper_switch_btn" />
+             </LinearLayout>
+            <!--//잠금화면에서 보기-->
+            <!--상단바에 정보 고정-->
+            <LinearLayout style="@style/setting_match_wrap_Layout">
+                <TextView
+                    style="@style/setting_upper_text"
+                    android:text="상단바에 정보 고정" />
+                <Switch
+                    android:id="@+id/bar_switch"
+                    style="@style/setting_upper_switch_btn"
+                    />
+            </LinearLayout>
+            <!--//상단바에 정보 고정-->
+            <!--푸시 알림 설정-->
+            <LinearLayout style="@style/setting_match_wrap_Layout">
+                <TextView
+                    style="@style/setting_upper_text"
+                    android:text="푸시 알림 설정" />
+                <Switch
+                    android:id="@+id/push_switch"
+                    style="@style/setting_upper_switch_btn" />
+            </LinearLayout>
+            <!--//푸시 알림 설정-->
+            <!--알림 정보-->
+            <LinearLayout style="@style/setting_match_wrap_Layout">
+                <TextView
+                    style="@style/setting_upper_text"
+                    android:id="@+id/Notification_text"
+                    android:textColor="@color/colorGrayoff"
+                    android:text="알림 정보" />
+                <TextView
+                    style="@style/setting_upper_switch_text"
+                    android:id="@+id/Notification_switch"
+                    android:textColor="@color/colorGrayoff"
+                    android:text="알림 없음"
+                     />
+            </LinearLayout>
+            <!--//알림 정보-->
+            <!--정보 업데이트-->
+            <LinearLayout style="@style/setting_match_wrap_Layout">
+                <TextView
+                    style="@style/setting_upper_text"
+                    android:text="정보 업데이트" />
+                <TextView
+                    style="@style/setting_upper_switch_text"
+                    android:id="@+id/infoupdate_switch"
+                    android:text="켤때마다" />
+            </LinearLayout>
+            <!--//정보 업데이트-->
+            <!--잠금 설정-->
+            <LinearLayout style="@style/setting_match_wrap_Layout">
+                <TextView
+                    style="@style/setting_upper_text"
+                    android:text="잠금 설정" />
+                <TextView
+                    style="@style/setting_upper_switch_text"
+                    android:id="@+id/lock_switch"
+                    android:text="안함" />
+            </LinearLayout>
+            <!--//잠금 설정-->
     </LinearLayout>
-        <!--//텍스트 세로-->
-        <!--스위치 세로-->
+    <!--//설정 위화면-->
+    <!--아래 화면-->
     <LinearLayout
-        android:layout_width="110dp"
-        android:layout_height="match_parent"
-        android:layout_marginLeft="10dp"
-        android:orientation="vertical">
-        <!--스위치 - 잠금 화면에서 보기-->
-        <Switch
-            android:id="@+id/lockview_switch"
-            android:layout_width="wrap_content"
-            android:layout_height="31dp"
-            android:layout_gravity="center"
-            android:track="@drawable/switch_track_selector"
-            android:layout_marginTop="22dp"
-            android:thumb="@drawable/switch_thumb"
-            />
-        <!--//스위치 - 잠금 화면에서 보기-->
-        <!--스위치 - 상단바에 정보 고정-->
-        <Switch
-            android:id="@+id/bar_switch"
-            android:layout_width="wrap_content"
-            android:layout_height="31dp"
-            android:layout_gravity="center"
-            android:track="@drawable/switch_track_selector"
-            android:layout_marginTop="20dp"
-            android:thumb="@drawable/switch_thumb"
-            />
-        <!--//스위치 - 상단바에 정보 고정-->
-        <!--스위치 - 푸시 알림 설정-->
-        <Switch
-            android:id="@+id/push_switch"
-            android:layout_width="wrap_content"
-            android:layout_height="31dp"
-            android:layout_gravity="center"
-            android:track="@drawable/switch_track_selector"
-            android:layout_marginTop="20dp"
-            android:thumb="@drawable/switch_thumb"
-            />
-
-        <TextView
-            android:id="@+id/Notification_switch"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="25dp"
-            android:letterSpacing="0.03"
-            android:lineSpacingExtra="2.5sp"
-            android:text="알림 없음"
-            android:textColor="@color/colorGrayoff"
-            android:textSize="17sp" />
-        <TextView
-            android:id="@+id/infoupdate_switch"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:textSize="17sp"
-            android:letterSpacing="0.03"
-            android:lineSpacingExtra="2.5sp"
-            android:textColor="@color/colorPrimary"
-            android:layout_marginTop="30dp"
-            android:text="켤때마다"
-            />
-        <TextView
-            android:id="@+id/lock_switch"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:textSize="17sp"
-            android:letterSpacing="0.03"
-            android:lineSpacingExtra="2.5sp"
-            android:textColor="@color/colorPrimary"
-            android:layout_marginTop="30dp"
-            android:text="안함"
-            />
-        <!--//스위치 - 푸시 알림 설정-->
-    </LinearLayout>
-        <!--//스위치 세로-->
-    </LinearLayout>
-    <!--//하단 내용-->
-    <!--평가 ~ 정보-->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        style="@style/setting_under_textline_box"
+        android:layout_weight="4">
+        <!--분할 선-->
+        <View style="@style/setting_under_line" />
+        <!--//분할 선-->
+        <!--아래 내부 레이아웃 (분할 선 밖에 빼려고 하나 더 만든 레이아웃)-->
+        <LinearLayout
+            style="@style/vertical_match_wrap_LinearLayout"
+            android:paddingLeft="15dp">
+            <!--평가하기-->
+           <TextView
+               style="@style/setting_under_text"
+               android:id="@+id/evaluation_setting"
+               android:text="평가하기"/>
+                <!--평가하기-->
+                <!--공지사항-->
+            <TextView
+                style="@style/setting_under_text"
+                android:id="@+id/notice_setting"
+                android:text="공지사항"/>
+                <!--//공지사항-->
+                <!--고객센터-->
+            <TextView
+                style="@style/setting_under_text"
+                android:id="@+id/customer_service_setting"
+                android:text="고객센터"/>
+                <!--//고객센터-->
+                <!--어플리케이션 정보-->
+            <TextView
+                style="@style/setting_under_text"
+                android:id="@+id/appinfo_setting"
+                android:text="어플리케이션 정보"/>
+            </LinearLayout>
+            <!--//어플리케이션 정보-->
+            <!--//아래 내부 레이아웃-->
+        <!--분할 선-->
         <View
-            android:layout_width="360dp"
-            android:layout_height="1dp"
-            android:layout_gravity="center"
-            android:background="@color/colorGrayoff"
-        />
-       <TextView
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:layout_marginLeft="40dp"
-           android:layout_marginTop="29dp"
-           android:textSize="16.5sp"
-           android:textColor="@color/colorBlack"
-           android:letterSpacing="0.03"
-           android:lineSpacingExtra="2.5sp"
-           android:text="평가하기"/>
-        <TextView
-            android:id="@+id/notice_setting"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="40dp"
-            android:layout_marginTop="21dp"
-            android:textSize="16.5sp"
-            android:textColor="@color/colorBlack"
-            android:letterSpacing="0.03"
-            android:lineSpacingExtra="2.5sp"
-            android:text="공지사항"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="40dp"
-            android:layout_marginTop="21dp"
-            android:textSize="16.5sp"
-            android:textColor="@color/colorBlack"
-            android:letterSpacing="0.03"
-            android:lineSpacingExtra="2.5sp"
-            android:text="고객센터"/>
-        <TextView
-            android:id="@+id/appinfo_setting"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="40dp"
-            android:layout_marginTop="21dp"
-            android:textSize="16.5sp"
-            android:textColor="@color/colorBlack"
-            android:letterSpacing="0.03"
-            android:lineSpacingExtra="2.5sp"
-            android:text="어플리케이션 정보"/>
-        <View
-            android:layout_width="360dp"
-            android:layout_marginTop="29dp"
-            android:layout_height="1dp"
-            android:layout_gravity="center"
-            android:background="@color/colorGrayoff"
-            />
-        <!--//평가 ~ 정보-->
+            style="@style/setting_under_line"
+            android:layout_marginTop="20dp" />
+        <!--//분할 선-->
     </LinearLayout>
+    <!--//아래 화면-->
 </LinearLayout>

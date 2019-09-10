@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="203.8dp"
+    android:layout_height="wrap_content"
     android:background="@color/colorWhite"
     android:padding="30dp">
 <LinearLayout
@@ -14,7 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="#777777"
-        android:textSize="10sp"
+        android:textSize="13sp"
         android:lineSpacingExtra="1.5sp"
         android:layout_marginRight="32dp"
         android:text="텍스트색"
@@ -44,7 +44,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#777777"
-            android:textSize="10sp"
+            android:textSize="13sp"
             android:lineSpacingExtra="1.5sp"
             android:layout_marginRight="27.5dp"
             android:text="텍스트크기"
@@ -73,7 +73,7 @@
             android:lineSpacingExtra="1.5sp"
             android:text="텍스트정렬"
             android:textColor="#777777"
-            android:textSize="10sp"
+            android:textSize="13sp"
             android:layout_marginRight="27.5dp"/>
         <ImageView
             android:id="@+id/edit_text_left"

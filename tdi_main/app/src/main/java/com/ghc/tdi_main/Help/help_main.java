@@ -18,7 +18,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.ghc.tdi_main.Main.activity_main;
+import com.ghc.tdi_main.Main.select_main;
 import com.ghc.tdi_main.R;
 import com.github.furkanozalp.colorpickerdialog.ClickListener;
 import com.github.furkanozalp.colorpickerdialog.ColorPicker;
@@ -80,7 +80,7 @@ protected void onCreate(Bundle savedInstanceState) {
     backbtn.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            Intent intent = new Intent(help_main.this, activity_main.class);
+            Intent intent = new Intent(help_main.this, select_main.class);
             startActivity(intent);
             overridePendingTransition(0, 0);
             finish();
@@ -90,7 +90,7 @@ protected void onCreate(Bundle savedInstanceState) {
     tbackbtn.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            Intent intent = new Intent(help_main.this,activity_main.class);
+            Intent intent = new Intent(help_main.this,select_main.class);
             startActivity(intent);
             overridePendingTransition(0, 0);
             finish();

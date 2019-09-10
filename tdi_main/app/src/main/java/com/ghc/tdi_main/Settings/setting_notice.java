@@ -21,12 +21,12 @@ public class setting_notice extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.setting_notice);
-        Toolbar tb = (Toolbar) findViewById(R.id.app_toolbar);
+        Toolbar tb = (Toolbar) findViewById(R.id.setting_notice_app_toolbar);
         tb.setTitle("");
         setSupportActionBar(tb);
         ImageView backbtn;
         TextView tbackbtn;
-        backbtn = (ImageView) findViewById(R.id.back_setting);
+        backbtn = (ImageView) findViewById(R.id.setting_notice_back_setting);
         backbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -36,7 +36,7 @@ public class setting_notice extends AppCompatActivity {
                 finish();
             }
         });
-        tbackbtn = (TextView) findViewById(R.id.toolbar_title);
+        tbackbtn = (TextView) findViewById(R.id.setting_notice_toolbar_title);
         tbackbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -58,7 +58,7 @@ public class setting_notice extends AppCompatActivity {
 
     public void onAddField(View v) {
         LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        final View rowView = inflater.inflate(R.layout.filed, null);
+        final View rowView = inflater.inflate(R.layout.setting_notice_filed, null);
         parentLinearLayout.addView(rowView, parentLinearLayout.getChildCount() - 1);
     }
 }

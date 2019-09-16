@@ -18,13 +18,13 @@ protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.setting_lock);
         /*툴바*/
-    Toolbar tb = (Toolbar) findViewById(R.id.app_toolbar);
+    Toolbar tb = (Toolbar) findViewById(R.id.setting_lock_app_toolbar);
     tb.setTitle("");
     setSupportActionBar(tb);
     /*//툴바*/
     ImageView backbtn;
     TextView tbackbtn;
-    backbtn = (ImageView)findViewById(R.id.back_setting);
+    backbtn = (ImageView)findViewById(R.id.setting_lock_back_setting);
     /*뒤로가기 인텐트*/
     backbtn.setOnClickListener(new View.OnClickListener() {
         @Override
@@ -35,7 +35,7 @@ protected void onCreate(Bundle savedInstanceState) {
             finish();
         }
     });
-    tbackbtn=(TextView)findViewById(R.id.toolbar_title);
+    tbackbtn=(TextView)findViewById(R.id.setting_lock_toolbar_title);
     tbackbtn.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {

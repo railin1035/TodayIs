@@ -12,7 +12,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-import com.ghc.tdi_main.Main.activity_main;
+import com.ghc.tdi_main.Main.select_main;
 import com.ghc.tdi_main.R;
 
 public class FirstMain extends AppCompatActivity {
@@ -105,7 +105,7 @@ public class FirstMain extends AppCompatActivity {
         loginbtns.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(FirstMain.this, activity_main.class);
+                Intent intent = new Intent(FirstMain.this, select_main.class);
                 setContentView(R.layout.display_main);
                 startActivity(intent);
                 overridePendingTransition(0, 0);

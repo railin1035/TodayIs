@@ -14,7 +14,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.ghc.tdi_main.Main.activity_main;
+import com.ghc.tdi_main.Main.select_main;
 import com.ghc.tdi_main.R;
 
 import java.util.ArrayList;
@@ -29,28 +29,28 @@ protected void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.memo_list);
     AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
     /*툴바*/
-    Toolbar tb = (Toolbar) findViewById(R.id.app_toolbar);
+    Toolbar tb = (Toolbar) findViewById(R.id.memo_list_app_toolbar);
     tb.setTitle("");
     setSupportActionBar(tb);
     /*//툴바*/
     ImageView backbtn;
     TextView tbackbtn;
-    backbtn = (ImageView)findViewById(R.id.back_setting);
+    backbtn = (ImageView)findViewById(R.id.memo_list_back_setting);
     /*뒤로가기 인텐트*/
     backbtn.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            Intent intent = new Intent(memo_list.this, activity_main.class);
+            Intent intent = new Intent(memo_list.this, select_main.class);
             startActivity(intent);
             overridePendingTransition(0, 0);
             finish();
         }
     });
-    tbackbtn=(TextView)findViewById(R.id.toolbar_title);
+    tbackbtn=(TextView)findViewById(R.id.memo_list_toolbar_title);
     tbackbtn.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            Intent intent = new Intent(memo_list.this,activity_main.class);
+            Intent intent = new Intent(memo_list.this,select_main.class);
             startActivity(intent);
             overridePendingTransition(0, 0);
             finish();

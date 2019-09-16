@@ -45,13 +45,13 @@ protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Window win = getWindow();
         win.setContentView(R.layout.memo_edit_filed);
-        Toolbar tb = (Toolbar) findViewById(R.id.app_toolbar);
+        Toolbar tb = (Toolbar) findViewById(R.id.memo_edit_app_toolbar);
         tb.setTitle("");
         setSupportActionBar(tb);
         /*//툴바*/
         ImageView backbtn;
         TextView tbackbtn;
-        backbtn = (ImageView)findViewById(R.id.back_setting);
+        backbtn = (ImageView)findViewById(R.id.memo_edit_back_setting);
 
 
         /*뒤로가기 인텐트*/
@@ -64,7 +64,7 @@ protected void onCreate(Bundle savedInstanceState) {
                         finish();
                 }
         });
-        tbackbtn=(TextView)findViewById(R.id.toolbar_title);
+        tbackbtn=(TextView)findViewById(R.id.memo_edit_toolbar_title);
         tbackbtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

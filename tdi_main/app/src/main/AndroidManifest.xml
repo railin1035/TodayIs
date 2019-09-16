@@ -9,7 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar"
         >
-        <activity android:name=".Main.activity_main">
+        <activity android:name=".Main.select_main">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

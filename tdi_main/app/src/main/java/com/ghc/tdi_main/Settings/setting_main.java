@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.ghc.tdi_main.Main.activity_main;
+import com.ghc.tdi_main.Main.select_main;
 import com.ghc.tdi_main.R;
 
 public class setting_main extends AppCompatActivity {
@@ -20,29 +20,27 @@ protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.setting_main);
         android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(setting_main.this,R.style.AlertDialog);
-        Toolbar tb = (Toolbar) findViewById(R.id.app_toolbar);
+        Toolbar tb = (Toolbar) findViewById(R.id.setting_app_toolbar);
         tb.setTitle("");
         setSupportActionBar(tb);
         ImageView backbtn;
-        final TextView notification_text;
-        notification_text = (TextView)findViewById(R.id.Notification_text);
         final TextView tbackbtn,lockbtn,noticebtn,appinfobtn,notification_btn,infoupdate_btn;
         /******뒤로가기 버튼******/
-        backbtn = (ImageView)findViewById(R.id.back_setting);
+        backbtn = (ImageView)findViewById(R.id.setting_back_setting);
         backbtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                        Intent intent = new Intent(setting_main.this, activity_main.class);
+                        Intent intent = new Intent(setting_main.this, select_main.class);
                         startActivity(intent);
                         overridePendingTransition(0, 0);
                         finish();
                 }
         });
-        tbackbtn=(TextView)findViewById(R.id.toolbar_title); // 뒤로가기 버튼 텍스트
+        tbackbtn=(TextView)findViewById(R.id.setting_toolbar_title); // 뒤로가기 버튼 텍스트
         tbackbtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                        Intent intent = new Intent(setting_main.this,activity_main.class);
+                        Intent intent = new Intent(setting_main.this,select_main.class);
                         startActivity(intent);
                         overridePendingTransition(0, 0);
                         finish();
@@ -91,11 +89,13 @@ protected void onCreate(Bundle savedInstanceState) {
 
         /******알림 설정******/
         final int[] selected_notification_infor ={0};
+        final TextView notification_text;
+        notification_text = (TextView)findViewById(R.id.Notification_text);
         notification_btn=(TextView)findViewById(R.id.Notification_switch);
         notification_btn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                        final String[] notification_infor = new String[]{"날씨", "미세먼지","일정","D-Day","메모","추천 음식","추천 의상"};
+                        final String[] notification_infor = new String[]{"날씨", "미세먼지","일정","D-Day","메모"};
                        android.app.AlertDialog.Builder notification_dialog = new android.app.AlertDialog.Builder(setting_main.this,R.style.AlertDialog);
                         notification_dialog.setTitle("알림 정보");
                         notification_dialog.setSingleChoiceItems(notification_infor, 0, new DialogInterface.OnClickListener() {

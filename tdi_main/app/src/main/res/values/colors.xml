@@ -8,9 +8,10 @@
     <color name="colorGray">#42221f1f</color>
     <color name="colorBlack">#333333</color>
     <color name="colorBlack55">#555555</color>
-    <color name="colorGrayoff">#a1a1a1</color>
+    <color name="colorGrayoff">#A1A1A1</color>
     <color name="colorMemo">#dfeff6</color>
     <color name="tintPrimary">#95c6ed</color>
     <color name="firstPrimary">#8095c6ed</color>
     <color name="colorRed">#ed3434</color>
+    <color name="loginClick">#00508f</color>
 </resources>

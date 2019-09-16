@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite">
+
+    <!-- 테마 레이아웃 -->
+    <LinearLayout
+        android:id="@+id/themeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/customborder"
+        android:orientation="vertical"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/customborder"
+            android:gravity="right">
+
+            <ImageButton
+                android:id="@+id/themebackbtn"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="#00ff0000"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/displayarrow"
+                android:onClick="isclick"/>
+
+        </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerview_main_listtheme"
+            android:layout_width="match_parent"
+            android:layout_height="226dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginRight="1dp"
+            android:background="@drawable/customborder"
+            android:scrollbarFadeDuration="0"
+            android:scrollbarSize="5dp"
+            android:scrollbarThumbVertical="@android:color/darker_gray"
+            android:scrollbars="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintVertical_weight="9"
+            tools:listitem="@layout/item_list"
+            tools:spanCount="5"></android.support.v7.widget.RecyclerView>
+
+    </LinearLayout>
+    <!-- 테마 레이아웃 -->
+
+</LinearLayout>
+
+
+
+
+
+
+

@@ -13,13 +13,10 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-<<<<<<< HEAD
-=======
 import android.support.v7.widget.RecyclerView.ViewHolder;
 
 import com.ghc.tdi_main.Main.activity_main;
 import com.ghc.tdi_main.Memo.memo_list;
->>>>>>> firebase
 import com.ghc.tdi_main.R;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -36,7 +33,6 @@ import java.util.Date;
 
 public class memo_edit extends AppCompatActivity {
 
-<<<<<<< HEAD
     private DatabaseReference databaseReference;
 
     EditText edit_Title;
@@ -59,29 +55,6 @@ public class memo_edit extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-=======
-        private FirebaseDatabase mFirebase;
-        private DatabaseReference mDatabase;
-
-        EditText edit_Title;
-        EditText edit_Content;
-        TextView edit_Date;
-
-        String ID;
-        String title;
-        String content;
-        String date;
-        String editdate;
-
-        public void writeNewMeMo(String title, String content, String create_day, String update_day){
-                String key = mDatabase.child("memo_list").push().getKey();
-                memo_list_items memo = new memo_list_items(title, content, create_day, update_day);
-                mDatabase.child("memo_list").child(title).setValue(memo);
-        }
-
-@Override
-protected void onCreate(Bundle savedInstanceState) {
->>>>>>> firebase
         super.onCreate(savedInstanceState);
         setContentView(R.layout.memo_edit_filed);
         Toolbar tb = (Toolbar) findViewById(R.id.app_toolbar);
@@ -98,7 +71,6 @@ protected void onCreate(Bundle savedInstanceState) {
         edit_Createdate = (TextView) findViewById(R.id.memo_edit_day);
         edit_Editdate = (TextView)findViewById(R.id.memo_edit_day);
 
-<<<<<<< HEAD
         long now = System.currentTimeMillis();
         Date date = new Date(now);
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
@@ -107,12 +79,7 @@ protected void onCreate(Bundle savedInstanceState) {
         edit_Editdate.setText(getTime);
 
         context=this;
-=======
-        mDatabase = FirebaseDatabase.getInstance().getReference();
-        edit_Title = (EditText)findViewById(R.id.memo_edit_title);
-        edit_Content = (EditText)findViewById(R.id.memo_edit_contents);
-        edit_Date = (TextView)findViewById(R.id.memo_edit_day);
->>>>>>> firebase
+
 
         /*뒤로가기 인텐트*/
         backbtn.setOnClickListener(new View.OnClickListener() {
@@ -136,7 +103,6 @@ protected void onCreate(Bundle savedInstanceState) {
         });
         /*//뒤로가기 인텐트*/
 
-<<<<<<< HEAD
 
     }
 
@@ -169,39 +135,6 @@ protected void onCreate(Bundle savedInstanceState) {
                 overridePendingTransition(0, 0);
                 finish();
                 break;
-=======
-                return true;
-        }
-        @Override
-        public boolean onOptionsItemSelected(MenuItem item){
-                switch(item.getItemId()){
-                        case R.id.memo_storage:
-                                title = edit_Title.getText().toString();
-                                content = edit_Content.getText().toString();
-                                date = edit_Date.getText().toString();
-                                editdate = edit_Date.getText().toString();
-                                writeNewMeMo(title, content, date, editdate);
-
-                                ArrayList<memo_list_items> memo_items = new ArrayList<>();
-                                memo_list_items memo = new memo_list_items(title, content, date, editdate);
-                                memo_items.add(0, memo);
-
-                                memo_list_adapter list_adapter = new memo_list_adapter(memo_items);
-
-                                memo_items.set(getAdapterPosition(), memo);
-
-
-
-                                break;
-                        case R.id.memo_close:
-                                Intent intent = new Intent(memo_edit.this,memo_list.class);
-                                startActivity(intent);
-                                overridePendingTransition(0, 0);
-                                finish();
-                                break;
-                }
-                return true;
->>>>>>> firebase
         }
         return true;
     }

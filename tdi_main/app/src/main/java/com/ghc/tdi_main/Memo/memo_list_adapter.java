@@ -1,6 +1,8 @@
 package com.ghc.tdi_main.Memo;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.widget.RecyclerView;
@@ -25,6 +27,8 @@ import java.util.ArrayList;
 public class memo_list_adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
     private String editNewTitle;
     private static ArrayList<memo_list_items> memoArrayList;
+
+
     memo_list_adapter(ArrayList<memo_list_items> memoArrayList) {
         this.memoArrayList = memoArrayList;
     }
@@ -33,7 +37,7 @@ public class memo_list_adapter extends RecyclerView.Adapter<RecyclerView.ViewHol
         TextView title, memo, create_date, update_date;
         //EditText editTitle, editMemo, editCreate_date, editUpdate_date;
         LinearLayout layout;
-
+        AlertDialog dialog;
         MyViewHolder(View view) {
             super(view);
             layout = view.findViewById(R.id.layout);
@@ -46,7 +50,9 @@ public class memo_list_adapter extends RecyclerView.Adapter<RecyclerView.ViewHol
             layout.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
                 public boolean onLongClick(View v) {
-                    Log.e("?", "?");
+                    create_dialog("asdf");
+
+
                     return true;
                 }
             });
@@ -84,6 +90,28 @@ public class memo_list_adapter extends RecyclerView.Adapter<RecyclerView.ViewHol
             Log.e("long click", "long");
             return true;
         }
+
+        public void create_dialog(String s){
+            final String input = s;
+            AlertDialog.Builder alert = new AlertDialog.Builder((memo_list)memo_list.mContext);
+            alert.setTitle("삭제하기");
+            alert.setMessage("정말 삭제하시겠습니까?")
+                    .setCancelable(false)
+                    .setPositiveButton("삭제", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            //  ((memo_list)memo_list.mContext).delete_items(input);
+                        }
+                    }).setNegativeButton("취소", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.cancel();
+                }
+            });
+
+            dialog = alert.create();
+            dialog.show();
+        }
     }
 
     @Override
@@ -117,6 +145,8 @@ public class memo_list_adapter extends RecyclerView.Adapter<RecyclerView.ViewHol
     public int getItemCount() {
         return memoArrayList.size();
     }
+
+
 
 
 

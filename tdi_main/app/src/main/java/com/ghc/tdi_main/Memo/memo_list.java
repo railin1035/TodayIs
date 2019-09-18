@@ -1,5 +1,6 @@
 package com.ghc.tdi_main.Memo;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.nfc.Tag;
@@ -45,6 +46,7 @@ public class memo_list extends AppCompatActivity {
     DatabaseReference databaseReference;
     memo_list_adapter list_adapter;
     ArrayList<memo_list_items> memo_arraylist;
+    public static Context mContext;
 
 
     @Override
@@ -52,7 +54,7 @@ public class memo_list extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.memo_list);
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
-
+        mContext = this;
         /*리사이클뷰*/
         list_recycle = (RecyclerView) findViewById(R.id.list_recycle);
         list_recycle.setHasFixedSize(true);

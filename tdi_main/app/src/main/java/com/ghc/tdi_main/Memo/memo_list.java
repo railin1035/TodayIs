@@ -1,6 +1,8 @@
 package com.ghc.tdi_main.Memo;
 
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,10 +10,14 @@ import android.support.v7.app.AppCompatDelegate;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewManager;
+import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.ghc.tdi_main.Main.select_main;
@@ -23,6 +29,7 @@ public class memo_list extends AppCompatActivity {
     RecyclerView list_recycle;
     RecyclerView.LayoutManager myLayoutManager;
 
+    boolean bookmarkbool=false;
 @Override
 protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -80,11 +87,6 @@ protected void onCreate(Bundle savedInstanceState) {
     memo_items.add(new memo_list_items("롸?","루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?","2019.08.04","2019.08.08"));
     memo_items.add(new memo_list_items("롸?","루?","2019.08.04","2019.08.08"));
     memo_items.add(new memo_list_items("롸?","루?","2019.08.04","2019.08.08"));
-    memo_items.add(new memo_list_items("롸?","루?","2019.08.04","2019.08.08"));
-    memo_items.add(new memo_list_items("롸?","루?","2019.08.04","2019.08.08"));
-    memo_items.add(new memo_list_items("롸?","루?","2019.08.04","2019.08.08"));
-    memo_items.add(new memo_list_items("롸?","루?","2019.08.04","2019.08.08"));
-    memo_items.add(new memo_list_items("롸?","루?","2019.08.04","2019.08.08"));
 
     memo_list_adapter list_adapter = new memo_list_adapter(memo_items);
     list_recycle.setAdapter(list_adapter);
@@ -100,6 +102,40 @@ protected void onCreate(Bundle savedInstanceState) {
     public boolean onOptionsItemSelected(MenuItem item){
     switch(item.getItemId()){
         case R.id.created_alignment:
+            /*팝업 레이아웃 */
+            final ImageButton bookmark_btn,remove_btn;
+            LayoutInflater inflater = (LayoutInflater)getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            LinearLayout li =(LinearLayout)inflater.inflate(R.layout.memo_list_popmenu,null);
+            li.setBackgroundColor(Color.parseColor("#99000000"));
+            LinearLayout.LayoutParams layparams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,LinearLayout.LayoutParams.MATCH_PARENT);
+            addContentView(li,layparams);
+            /*//팝업 레이아웃 */
+            /*즐겨찾기 버튼*/
+            bookmark_btn = findViewById(R.id.memo_bookmark_btn);
+            bookmark_btn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(bookmarkbool == false) {
+                        bookmark_btn.setBackgroundResource(R.drawable.click_star);
+                        bookmarkbool = true;
+                    }
+                    else if(bookmarkbool == true){
+                        bookmark_btn.setBackgroundResource(R.drawable.default_star);
+                        bookmarkbool = false;
+                    }
+                }
+            });
+            /*//즐겨찾기 버튼*/
+            /*삭제 버튼*/
+            remove_btn = findViewById(R.id.memo_remove_btn);
+            remove_btn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    LinearLayout deleteli = findViewById(R.id.list_popmenu);
+                    ((ViewManager)deleteli.getParent()).removeView(deleteli);
+                }
+            });
+            /*//삭제 버튼*/
             break;
         case R.id.updated_alignment:
             break;

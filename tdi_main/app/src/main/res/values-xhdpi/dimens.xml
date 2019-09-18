@@ -20,5 +20,6 @@
     <!--memo_edit_iconbar-->
     <dimen name="memo_edit_iconbar_width">36dp</dimen> <!--아이콘 크기-->
     <dimen name="memo_edit_iconbar_height">38dp</dimen> <!--아이콘 높이-->
+    <dimen name="default_color_picker_margin">18dp</dimen> <!--box 컬러피커 마진-->
     <!--//memo_edit_iconbar-->
 </resources>

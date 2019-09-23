@@ -42,7 +42,7 @@
                 style="@style/default_text_GrayOff"
                 android:id="@+id/memo_edit_day"
                 android:textSize="14sp"
-                android:text="2019.09.10"/>
+                android:text=""/>
             <!--//오늘 날짜-->
             <!--제목입력-->
             <EditText

@@ -1,10 +1,12 @@
 package com.ghc.tdi_main.Memo;
 
 public class memo_list_items {
-    private String title;
-    private String memo;
-    private String create_day;
-    private String update_day;
+
+
+    public String title;
+    public String memo;
+    public String create_day;
+    public String update_day;
 
     public memo_list_items(String title, String memo, String create_day, String update_day) {
         this.title = title;
@@ -12,6 +14,8 @@ public class memo_list_items {
         this.create_day = create_day;
         this.update_day = update_day;
     }
+
+    public memo_list_items(){};
 
     public String getTitle() {
         return title;

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/vertical_match_LinearLayout"
+    android:id="@+id/list_popmenu">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_weight="4"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_weight="2"
+        android:gravity="center">
+        <LinearLayout
+            style="@style/default_wrap_Layout"
+            android:background="@drawable/round_box"
+            android:padding="30dp">
+        <ImageButton
+            style="@style/default_wrap_Layout"
+            android:id="@+id/memo_bookmark_btn"
+            android:src="@drawable/default_star"
+            android:background="@color/colorWhite"
+            android:layout_marginRight="40dp" />
+        <ImageButton
+            style="@style/default_wrap_Layout"
+            android:id="@+id/memo_remove_btn"
+            android:src="@drawable/remove"
+            android:background="@color/colorWhite"/>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_weight="4"/>
+</LinearLayout>

@@ -37,20 +37,6 @@
            android:columnCount="3"
            android:layout_marginBottom="30dp"
            />
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="bottom|end"
-        >
-       <TextView
-           android:id="@+id/text_color_off"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:text="취소"
-           android:textSize="16sp"
-           android:textColor="#2785D0"
-           />
-    </LinearLayout>
+
    </LinearLayout>
 </LinearLayout>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--primary_toolbar-->
+    <dimen name="primary_toolbar_btn_margin">20dp</dimen> <!--툴바 버튼 마진-->
+     <dimen name="primary_toolbar_text_margin">20dp</dimen> <!--툴바 텍스트 마진-->
+    <dimen name="primary_toolbar_text_size">20sp</dimen> <!--툴바 텍스트 크기-->
+    <!--//primary_toolbar-->
+
+    <!--select_main.xml-->
+    <dimen name="select_logo_margin">10dp</dimen>  <!--로고 마진-->
+    <dimen name="select_logo_font">30sp</dimen>  <!--로고 폰트 크기-->
+    <dimen name="select_big_iconpadding">20dp</dimen> <!--아이콘 패딩-->
+    <dimen name="select_main_iconsize">92dp</dimen> <!--아이콘 사이즈-->
+    <dimen name="select_icon_margin">20dp</dimen> <!--아이콘 사이값 마진-->
+    <dimen name="select_font_margin">10dp</dimen> <!--폰트 마진-->
+    <dimen name="select_font_size">15sp</dimen>  <!--폰트 크기-->
+    <dimen name="select_row_margin">35dp</dimen> <!--아이콘 행간격-->
+    <!--//select_main.xml-->
+
+    <!--memo_edit_iconbar-->
+    <dimen name="memo_edit_iconbar_width">36dp</dimen> <!--아이콘 크기-->
+    <dimen name="memo_edit_iconbar_height">38dp</dimen> <!--아이콘 높이-->
+    <dimen name="default_color_picker_margin">18dp</dimen> <!--box 컬러피커 마진-->
+    <!--//memo_edit_iconbar-->
+</resources>

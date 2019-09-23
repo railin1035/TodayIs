@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/add_notice"
+    style="@style/vertical_match_wrap_LinearLayout"
+    >
+    <LinearLayout
+        style="@style/default_match_wrap_Layout"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp">
+        <!--공지사항 필드-->
+        <LinearLayout style="@style/vertical_match_wrap_LinearLayout">
+            <LinearLayout
+                style="@style/default_match_wrap_Layout"
+                >
+                <TextView
+                    style="@style/default_wrap_Layout"
+                    android:layout_weight="1"
+                    android:textSize="15sp"
+                    android:textColor="@color/colorBlack"
+                    android:paddingBottom="5dp"
+                    android:text="공지사항 입니다."
+                    />
+                <ImageView
+                    style="@style/default_wrap_Layout"
+                    android:id="@+id/add_field_btn"
+                    android:src="@drawable/under_arrow"
+                    android:onClick="onAddField"
+                    />
+            </LinearLayout>
+            <TextView
+                style="@style/default_wrap_Layout"
+                android:textSize="10sp"
+                android:textColor="@color/colorGrayoff"
+                android:text="2019.07.22"
+                />
+        </LinearLayout>
+        <!--//공지사항 필드-->
+    </LinearLayout>
+    <!--//분할 선-->
+    <View
+        style="@style/setting_notice_under_line"
+        android:paddingBottom="1dp"/>
+    <!--//분할 선-->
+</LinearLayout>

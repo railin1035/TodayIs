@@ -41,47 +41,8 @@
             <TextView
                 style="@style/default_text_GrayOff"
                 android:id="@+id/memo_edit_day"
-<<<<<<< HEAD
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/colorGrayoff"
-                android:layout_gravity="top|left"
-                android:letterSpacing="0.03"
-                android:lineSpacingExtra="1.5sp"
-                android:textSize="9sp"
-                android:paddingLeft="15dp"
-                android:paddingTop="10dp"
-                />
-            <!--오늘 날짜입력-->
-
-            <EditText
-                android:id="@+id/memo_edit_title"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:gravity="top"
-                android:textSize="17sp"
-                android:textColor="@color/colorBlack"
-                android:letterSpacing="0.03"
-                android:lineSpacingExtra="5sp"
-                android:padding="15dp"
-                android:hint="제목입력"
-                />
-
-    <EditText
-        android:id="@+id/memo_edit_contents"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="top"
-        android:textSize="15sp"
-        android:textColor="@color/colorBlack"
-        android:letterSpacing="0.03"
-        android:lineSpacingExtra="5sp"
-        android:padding="15dp"
-        android:hint="내용입력"
-        />
-=======
                 android:textSize="14sp"
-                android:text="2019.09.10"/>
+                android:text=""/>
             <!--//오늘 날짜-->
             <!--제목입력-->
             <EditText
@@ -97,7 +58,6 @@
                 android:background="@null"
                 android:hint="내용입력" />
             <!--//내용입력-->
->>>>>>> develop
         </LinearLayout>
         <!--//메모 EditText-->
     </LinearLayout>

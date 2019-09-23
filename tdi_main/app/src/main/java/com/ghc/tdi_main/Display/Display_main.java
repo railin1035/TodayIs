@@ -17,7 +17,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.ghc.tdi_main.Main.activity_main;
+import com.ghc.tdi_main.Main.select_main;
 import com.ghc.tdi_main.R;
 
 import java.util.ArrayList;
@@ -171,8 +171,8 @@ public class Display_main  extends AppCompatActivity {
 
             case R.id.noalls :
 
-                Intent intent = new Intent(Display_main.this, activity_main.class);
-                setContentView(R.layout.activity_main);
+                Intent intent = new Intent(Display_main.this, select_main.class);
+                setContentView(R.layout.select_main);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
                 finish();

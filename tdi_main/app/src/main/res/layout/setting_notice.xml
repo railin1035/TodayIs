@@ -1,102 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/default_ScrollView">
+<LinearLayout
+   style="@style/vertical_match_LinearLayout"
     android:background="@color/colorWhite">
     <android.support.v7.widget.Toolbar
         xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/colorPrimary"
-        android:id="@+id/app_toolbar">
+        style="@style/primary_toolbar"
+        android:id="@+id/setting_notice_app_toolbar">
         <ImageView
-            android:id="@+id/back_setting"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/arrow"
-            android:layout_marginLeft="20dp"
-            />
+            style="@style/toolbar_back_btn"
+            android:id="@+id/setting_notice_back_setting" />
         <TextView
-            android:id="@+id/toolbar_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingLeft="20dp"
-            android:text="공지사항"
-            android:textStyle="bold"
-            android:textColor="@color/colorWhite"
-            android:textSize="20dp"
-            />
+            style="@style/toolbar_text"
+            android:id="@+id/setting_notice_toolbar_title"
+            android:text="공지사항" />
     </android.support.v7.widget.Toolbar>
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="76dp"
-        android:paddingTop="20dp"
-        android:orientation="horizontal"
-        >
-        <!--공지사항 세로-->
+            style="@style/vertical_match_LinearLayout">
         <LinearLayout
-            android:layout_width="240dp"
-            android:layout_marginLeft="40dp"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="공지사항 입니다."
-                android:textSize="15sp"
-                android:letterSpacing="0.03"
-                android:lineSpacingExtra="2.5sp"
-                android:textColor="@color/colorBlack"
-                android:paddingBottom="5dp"
-                android:layout_gravity="left"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="2019.07.22"
-                android:textSize="10sp"
-                android:letterSpacing="0.03"
-                android:lineSpacingExtra="1.5sp"
-                android:textColor="@color/colorGrayoff"
-                android:layout_gravity="left"
-                />
+            style="@style/default_match_wrap_Layout"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp">
+        <!--공지사항 필드-->
+            <LinearLayout style="@style/vertical_match_wrap_LinearLayout">
+                <LinearLayout
+                    style="@style/default_match_wrap_Layout"
+                    >
+                <TextView
+                    style="@style/default_wrap_Layout"
+                    android:layout_weight="1"
+                    android:textSize="15sp"
+                    android:textColor="@color/colorBlack"
+                    android:paddingBottom="5dp"
+                    android:text="공지사항 입니다." />
+                <ImageView
+                    style="@style/default_wrap_Layout"
+                    android:id="@+id/add_field_btn"
+                    android:src="@drawable/under_arrow"
+                    android:onClick="onAddField" />
+                </LinearLayout>
+                <TextView
+                    style="@style/default_wrap_Layout"
+                    android:textSize="10sp"
+                    android:textColor="@color/colorGrayoff"
+                    android:text="2019.07.22" />
+            </LinearLayout>
+            <!--//공지사항 필드-->
         </LinearLayout>
-        <!--//공지사항 세로-->
-        <!--arrow 위치-->
-        <LinearLayout
-            android:layout_width="110dp"
-            android:layout_height="match_parent"
-            android:paddingLeft="50dp"
-            android:paddingTop="5dp"
-            android:orientation="vertical">
-            <!--arrow-->
-           <ImageView
-               android:id="@+id/add_field_btn"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:layout_gravity="center"
-               android:src="@drawable/under_arrow"
-               android:onClick="onAddField"
-               />
-            <!--//arrow-->
+            <!--//분할 선-->
+            <View
+                style="@style/setting_notice_under_line"
+                android:paddingBottom="1dp"/>
+            <!--//분할 선-->
+            <LinearLayout
+                style="@style/vertical_match_LinearLayout"
+                android:id="@+id/parent_linear_layout">
+            </LinearLayout>
         </LinearLayout>
-        <!--//arrow 위치-->
     </LinearLayout>
-    <!--//선-->
-    <View
-        android:layout_width="360dp"
-        android:layout_height="1dp"
-        android:layout_gravity="center"
-        android:background="@color/colorGrayoff"
-        android:paddingBottom="1dp"
-        />
-    <!--//선-->
-    <LinearLayout
-        android:id="@+id/parent_linear_layout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-    </LinearLayout>
-</LinearLayout>
+</ScrollView>

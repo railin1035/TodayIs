@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/vertical_match_LinearLayout"
+    android:background="@drawable/main_background"
+    >
+    <!--*****로고 레이아웃*****-->
+    <LinearLayout
+        style="@style/vertical_match_LinearLayout"
+        android:layout_weight="2"
+        android:gravity="center|bottom"
+        >
+        <ImageView
+            style="@style/vertical_wrap_LinearLayout"
+            android:layout_marginBottom="@dimen/select_logo_margin"
+            android:src="@drawable/logo"
+            />
+        <TextView
+            style="@style/select_main_font"
+            android:textSize="@dimen/select_logo_font"
+            android:textColor="@color/colorWhite"
+            android:text="오늘은?"
+            />
+    </LinearLayout>
+    <!--*****//로고 레이아웃*****-->
+    <!--*****아이콘 레이아웃***** -->
+    <LinearLayout
+        style="@style/vertical_match_LinearLayout"
+        android:gravity="center"
+        android:layout_weight="1"
+        >
+        <!--첫번째 줄-->
+        <LinearLayout
+            style="@style/default_match_wrap_Layout"
+            android:gravity="center"
+            >
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                style="@style/vertical_wrap_LinearLayout">
+                <ImageView
+                    style="@style/select_main_icon"
+                    android:id="@+id/m_display_btn"
+                    android:src="@drawable/screen"
+                    android:background="@drawable/circle_btn"/>
+                <TextView
+                    style="@style/select_main_font"
+                    android:textColor="@color/colorWhite"
+                    android:text="화면"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                style="@style/vertical_wrap_LinearLayout"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/select_icon_margin"
+                android:layout_marginRight="@dimen/select_icon_margin">
+                <ImageView
+                    style="@style/select_main_icon"
+                    android:id="@+id/m_setting_btn"
+                    android:src="@drawable/setting"
+                    android:background="@drawable/circle_btn"/>
+                <TextView
+                    style="@style/select_main_font"
+                    android:textColor="@color/colorWhite"
+                    android:text="설정"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                style="@style/vertical_wrap_LinearLayout"
+                >
+                <ImageView
+                    style="@style/select_main_icon"
+                    android:id="@+id/m_memo_btn"
+                    android:background="@drawable/circle_btn"
+                    android:src="@drawable/memo" />
+                <TextView
+                    style="@style/select_main_font"
+                    android:textColor="@color/colorWhite"
+                    android:text="메모"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+        <!--//첫번째 줄-->
+        <!--두번째 줄-->
+        <LinearLayout
+            style="@style/default_match_wrap_Layout"
+            android:layout_marginTop="@dimen/select_row_margin"
+            android:gravity="center">
+            <LinearLayout
+                style="@style/vertical_wrap_LinearLayout"
+                >
+                <ImageView
+                    style="@style/select_main_icon"
+                    android:id="@+id/m_schedule_btn"
+                    android:src="@drawable/calendar"
+                    android:background="@drawable/circle_btn"/>
+                <TextView
+                    style="@style/select_main_font"
+                    android:textColor="@color/colorWhite"
+                    android:text="일정"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                style="@style/vertical_wrap_LinearLayout"
+                android:layout_marginRight="@dimen/select_icon_margin"
+                android:layout_marginLeft="@dimen/select_icon_margin"
+                >
+                <ImageView
+                    style="@style/select_main_icon"
+                    android:id="@+id/m_mypage_btn"
+                    android:src="@drawable/mypage"
+                    android:background="@drawable/circle_btn"/>
+                <TextView
+                    style="@style/select_main_font"
+                    android:textColor="@color/colorWhite"
+                    android:text="마이페이지"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                style="@style/vertical_wrap_LinearLayout"
+                >
+                <ImageView
+                    style="@style/select_main_icon"
+                    android:id="@+id/m_help_btn"
+                    android:src="@drawable/qa"
+                    android:background="@drawable/circle_btn"/>
+                <TextView
+                    style="@style/select_main_font"
+                    android:textColor="@color/colorWhite"
+                    android:text="도움말"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!--//두번째 줄-->
+    <!--*****//아이콘 레이아웃*****-->
+</LinearLayout>

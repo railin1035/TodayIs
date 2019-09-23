@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" 
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    style="@style/vertical_match_wrap_LinearLayout"
     android:id="@+id/list_filed"
-    android:layout_marginLeft="15dp"
-    android:layout_marginRight="15dp"
     android:layout_marginBottom="15dp"
+    android:background="@color/colorWhite"
+    android:elevation="5dp"
     >
 
     <LinearLayout
+<<<<<<< HEAD
         android:id="@+id/layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -109,5 +108,57 @@
         </LinearLayout>
 
 
+=======
+        style="@style/vertical_match_wrap_LinearLayout"
+        android:background="@drawable/round_box"
+        android:padding="15dp"
+        >
+        <TextView
+            style="@style/default_text_black"
+            android:id="@+id/memolist_title"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:text="타이틀"
+            />
+        <TextView
+            style="@style/default_text_black"
+            android:id="@+id/memolist_memo"
+            android:textSize="14sp"
+            android:layout_marginTop="14dp"
+            android:text="메모"
+            />
+        <LinearLayout
+            style="@style/default_match_wrap_Layout"
+            android:layout_marginTop="14dp">
+            <TextView
+                style="@style/default_text_GrayOff"
+                android:layout_marginRight="12dp"
+                android:textSize="12sp"
+                android:text="등록일"
+                />
+            <TextView
+                style="@style/default_text_GrayOff"
+                android:id="@+id/memeolist_create_days"
+                android:textSize="12sp"
+                android:text="2019.09.09"
+                />
+            <LinearLayout
+               style="@style/default_match_Layout"
+                android:gravity="end">
+                <TextView
+                    style="@style/default_text_GrayOff"
+                    android:layout_marginRight="12dp"
+                    android:textSize="12sp"
+                    android:text="최종수정일"
+                    />
+                <TextView
+                    style="@style/default_text_GrayOff"
+                    android:id="@+id/memeolist_update_days"
+                    android:textSize="12sp"
+                    android:text="2019.09.09"
+                     />
+            </LinearLayout>
+        </LinearLayout>
+>>>>>>> develop
     </LinearLayout>
 </LinearLayout>

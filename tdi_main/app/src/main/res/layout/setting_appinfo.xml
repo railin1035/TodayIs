@@ -1,163 +1,99 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/colorWhite"
-    >
-    <android.support.v7.widget.Toolbar
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/colorPrimary"
-        android:id="@+id/app_toolbar">
-        <ImageView
-            android:id="@+id/back_setting"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/arrow"
-            android:layout_marginLeft="20dp"
-            />
-        <TextView
-            android:id="@+id/toolbar_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingLeft="20dp"
-            android:text="어플리케이션 정보"
-            android:textStyle="bold"
-            android:textColor="@color/colorWhite"
-            android:textSize="20dp"
-            />
-    </android.support.v7.widget.Toolbar>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/vertical_match_LinearLayout"
+    android:background="@color/colorWhite">
+    <!--상단 툴바-->
+<android.support.v7.widget.Toolbar
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/primary_toolbar"
+    android:id="@+id/setting_appinfo_app_toolbar">
+    <ImageView
+        style="@style/toolbar_back_btn"
+        android:id="@+id/setting_appinfo_back_setting"
+        />
+    <TextView
+        style="@style/toolbar_text"
+        android:id="@+id/setting_appinfo_toolbar_title"
+        android:text="어플리케이션 정보"
+        />
+</android.support.v7.widget.Toolbar>
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_gravity="center"
-        android:layout_marginTop="60dp">
-        <!--버전정보-->
+        style="@style/vertical_match_LinearLayout"
+        android:gravity="center"
+        android:layout_weight="1"
+        >
+        <!--Info 로고-->
         <ImageView
-            android:layout_width="127dp"
-            android:layout_height="110dp"
-            android:background="@drawable/infologo"
-            android:layout_gravity="center"
-            android:layout_marginBottom="15dp"/>
+            style="@style/vertical_wrap_LinearLayout"
+            android:layout_marginBottom="@dimen/select_logo_margin"
+            android:src="@drawable/infologo"
+            />
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="30sp"
+            style="@style/select_main_font"
+            android:textSize="@dimen/select_logo_font"
             android:textColor="@color/colorBlack55"
-            android:letterSpacing="0.05"
-            android:lineSpacingExtra="4.5sp"
-            android:layout_gravity="center"
-            android:layout_marginBottom="60dp"
             android:text="오늘은?"
             />
+        <!--//Info 로고-->
+        <!--버전정보-->
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp"
-            android:layout_marginBottom="30dp"
-            android:layout_gravity="center">
+            style="@style/default_match_wrap_Layout"
+            android:gravity="center"
+            android:layout_marginTop="30dp">
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="17sp"
-                android:textColor="@color/colorBlack"
-                android:letterSpacing="0.03"
-                android:layout_gravity="left"
-                android:layout_marginRight="46dp"
-                android:lineSpacingExtra="2.5sp"
+                style="@style/setting_info_verson_text"
                 android:text="버전정보"/>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="17sp"
+                style="@style/setting_info_verson_text"
                 android:textColor="@color/colorGrayoff"
-                android:letterSpacing="0.03"
-                android:layout_gravity="center"
-                android:layout_marginRight="46dp"
-                android:lineSpacingExtra="2.5sp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
                 android:text="1.0.1"/>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="17sp"
+                style="@style/setting_info_verson_text"
                 android:textColor="@color/colorPrimary"
-                android:layout_gravity="right"
-                android:letterSpacing="0.03"
-                android:lineSpacingExtra="2.5sp"
                 android:text="최신버전"/>
         </LinearLayout>
         <!--//버전정보-->
     </LinearLayout>
-    <!--ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ-->
+    <!--아래 화면-->
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_gravity="center">
-    <View
-        android:layout_width="360dp"
-        android:layout_height="1dp"
-        android:layout_gravity="center"
-        android:background="@color/colorGrayoff"
-        />
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        style="@style/setting_under_textline_box"
+        android:layout_weight="1">
+        <!--분할 선-->
+        <View style="@style/setting_under_line" />
+        <!--//분할 선-->
+        <!--아래 내부 레이아웃 (분할 선 밖에 빼려고 하나 더 만든 레이아웃)-->
         <LinearLayout
-            android:layout_width="240dp"
-            android:layout_marginLeft="40dp"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            style="@style/vertical_match_wrap_LinearLayout"
+            android:paddingLeft="15dp">
+            <!--이용약관-->
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="29dp"
-                android:textSize="16.5sp"
-                android:textColor="@color/colorBlack"
-                android:letterSpacing="0.03"
-                android:lineSpacingExtra="2.5sp"
+                style="@style/setting_under_text"
                 android:text="이용약관"/>
+            <!--이용약관-->
+            <!--개인정보처리방침-->
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="21dp"
-                android:textSize="16.5sp"
-                android:textColor="@color/colorBlack"
-                android:letterSpacing="0.03"
-                android:lineSpacingExtra="2.5sp"
+                style="@style/setting_under_text"
                 android:text="개인정보처리방침"/>
+            <!--//개인정보처리방침-->
+            <!--오픈 소스 라이선스-->
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="21dp"
-                android:textSize="16.5sp"
-                android:textColor="@color/colorBlack"
-                android:letterSpacing="0.03"
-                android:lineSpacingExtra="2.5sp"
+                style="@style/setting_under_text"
                 android:text="오픈 소스 라이선스"/>
+            <!--//오픈 소스 라이선스-->
+            <!--위치기반서비스 이용약관-->
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="21dp"
-                android:textSize="16.5sp"
-                android:textColor="@color/colorBlack"
-                android:letterSpacing="0.03"
-                android:lineSpacingExtra="2.5sp"
+                style="@style/setting_under_text"
                 android:text="위치기반서비스 이용약관"/>
         </LinearLayout>
-    </LinearLayout>
+        <!--//위치기반서비스 이용약관-->
+        <!--//아래 내부 레이아웃-->
+        <!--분할 선-->
         <View
-            android:layout_width="360dp"
-            android:layout_marginTop="29dp"
-            android:layout_height="1dp"
-            android:layout_gravity="center"
-            android:background="@color/colorGrayoff"
-            />
-</LinearLayout>
+            style="@style/setting_under_line"
+            android:layout_marginTop="20dp" />
+        <!--//분할 선-->
+    </LinearLayout>
+    <!--//아래 화면-->
 </LinearLayout>

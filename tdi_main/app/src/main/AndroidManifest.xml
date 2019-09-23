@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar"
         >
-        <activity android:name=".Main.activity_main">
+        <activity android:name=".Main.select_main">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,10 +23,13 @@
         <activity android:name=".Settings.setting_notice"></activity>
         <activity android:name=".Settings.setting_appinfo"></activity>
         <activity android:name=".Memo.memo_list"></activity>
-        <activity android:name=".Memo.memo_edit"></activity>
-        <activity android:name=".Memo.memo_list_adapter"></activity>
+        <activity android:name=".Memo.memo_edit"
+            android:windowSoftInputMode="adjustResize"></activity>
         <activity android:name=".Help.help_main"></activity>
         <activity android:name=".Display.Display_main"></activity>
+        <activity android:name=".Login.FirstMain"></activity>
+        <activity android:name=".Login.EurnSignUp"></activity>
+        <activity android:name=".Schedule.schedule_input"></activity>
     </application>
 
 </manifest>

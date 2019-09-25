@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite">
+
+    <!--배경화면 레이아웃-->
+    <LinearLayout
+        android:id="@+id/backLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="visible"
+        android:layout_weight="1">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/customborder"
+            android:gravity="right">
+
+            <ImageButton
+                android:id="@+id/colorbackbtn"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="#00ff0000"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/displayarrow"
+                android:onClick="colorclick"/>
+
+        </LinearLayout>
+
+        <!--배경색 레이아웃-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="113dp"
+            android:background="@drawable/customborder">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="31dp">
+
+                <TextView
+                    android:id="@+id/backtext"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="배경색"
+                    android:textColor="@color/colorBlack55"
+                    android:textSize="10sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="32dp">
+
+                <Button
+                    android:id="@+id/backcolorbtn"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="45dp"
+                    android:layout_height="21dp"
+                    android:background="@drawable/colorbuttoncustomborder" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="15dp">
+
+                <ImageButton
+                    android:id="@+id/backgrabtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#00ff0000"
+                    android:src="@drawable/ic_colorpicker_back" />
+            </LinearLayout>
+
+        </LinearLayout>
+        <!--배경색 레이아웃-->
+
+        <!--글씨크기 레이아웃-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="113dp"
+            android:background="@drawable/customborder">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="32dp">
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="글씨색"
+                    android:textColor="@color/colorBlack55"
+                    android:textSize="10sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="32dp">
+
+                <Button
+                    android:id="@+id/textcolorbtn"
+                    android:layout_width="45dp"
+                    android:layout_height="21dp"
+                    android:background="@drawable/colorbuttoncustomborder" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="15dp">
+
+                <ImageButton
+                    android:id="@+id/textgrabtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#00ff0000"
+                    android:src="@drawable/ic_colorpicker_back" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="52dp">
+
+                <TextView
+                    android:id="@+id/text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="글씨크기"
+                    android:textColor="@color/colorBlack55"
+                    android:textSize="10sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="31dp">
+
+                <Button
+                    android:id="@+id/button8"
+                    android:layout_width="45dp"
+                    android:layout_height="21dp"
+                    android:background="@drawable/displaytextsizecustomborder"
+                    android:text="13"
+                    android:textColor="#a7abab"
+                    android:textSize="10sp" />
+            </LinearLayout>
+            <!--글씨크기 레이아웃-->
+        </LinearLayout>
+        <!--배경화면 레이아웃-->
+    </LinearLayout>
+</LinearLayout>

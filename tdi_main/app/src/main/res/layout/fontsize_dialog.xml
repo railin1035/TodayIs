@@ -6,6 +6,7 @@
     android:layout_height="wrap_content"
     android:padding="15dp"
     android:background="@drawable/round_box"
+    android:elevation="5dp"
     android:minWidth="200dp">
 <TextView
     android:id="@+id/font_dialog_text"

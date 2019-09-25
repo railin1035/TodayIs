@@ -13,37 +13,155 @@
             android:id="@+id/schedule_input_toolbar_title"
             android:text="일정" />
     </android.support.v7.widget.Toolbar>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:gravity="center">
+    <EditText
+        style="@style/default_match_wrap_Layout"
+        android:id="@+id/schedule_input_title_edittext"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:textSize="13sp"
+        android:hint="  일정을 입력 하세요"/>
+    <LinearLayout
+        style="@style/vertical_match_LinearLayout"
+        android:paddingTop="25dp"
+        android:paddingLeft="25dp"
+        android:paddingRight="25dp"
+        >
+        <LinearLayout style="@style/schedule_input_layout">
+            <LinearLayout style="@style/schedule_input_layout_center">
+                <TextView
+                    style="@style/schedule_input_left_text"
+                    android:text="시작일"
+                    android:layout_weight="1"/>
+                <TextView
+                    style="@style/schedule_input_underline_text"
+                    android:id="@+id/schedule_input_start_day_text"
+                    android:text="2019년      09월      23일   (월)     09:00"/>
+            </LinearLayout>
+            <LinearLayout style="@style/schedule_input_layout_center">
+                <TextView
+                    style="@style/schedule_input_left_text"
+                    android:layout_weight="1"
+                    android:text="종료일"/>
+                <TextView
+                    style="@style/schedule_input_underline_text"
+                    android:id="@+id/schedule_input_end_day_text"
+                    android:text="2019년      09월      23일   (월)     18:00"/>
+            </LinearLayout>
+            <LinearLayout style="@style/schedule_input_layout_center"
+                android:gravity="center_vertical|end">
+                <Button
+                    android:id="@+id/schedule_input_time_btn"
+                    android:layout_width="55dp"
+                    android:layout_height="25dp"
+                    android:text="시간"
+                    android:textSize="13sp"
+                    android:textColor="@color/colorWhite"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/round_box_input_btn_primary"/> <!--시간 단위 일정-->
+                <Button
+                    android:id="@+id/schedule_input_day_btn"
+                    android:layout_width="55dp"
+                    android:layout_height="25dp"
+                    android:text="종일"
+                    android:textSize="13sp"
+                    android:background="@drawable/round_box_input_btn_default"/> <!--일 단위 일정-->
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout style="@style/schedule_input_layout">
+            <LinearLayout style="@style/schedule_input_layout_center">
+                <TextView
+                    style="@style/schedule_input_left_text"
+                    android:text="반복"
+                    android:layout_weight="1"/>
+                <Button
+                    style="@style/schedule_input_rectangle_btn"
+                    android:id="@+id/schedule_input_none_btn"
+                    android:background="@color/colorPrimary"
+                    android:textColor="@color/colorWhite"
+                    android:text="없음"/>
+                <Button
+                    style="@style/schedule_input_rectangle_btn"
+                    android:id="@+id/schedule_input_week_btn"
+                    android:text="매주"/>
+                <Button
+                    style="@style/schedule_input_rectangle_btn"
+                    android:id="@+id/schedule_input_month_btn"
+                    android:text="매월"/>
+                <Button
+                    style="@style/schedule_input_rectangle_btn"
+                    android:id="@+id/schedule_input_year_btn"
+                    android:text="매년"/>
+            </LinearLayout>
+            <LinearLayout style="@style/schedule_input_layout_center">
+                <TextView
+                    style="@style/schedule_input_left_text"
+                    android:text="알림"
+                    android:layout_weight="1"/>
+                <TextView
+                    style="@style/schedule_input_underline_text"
+                    android:id="@+id/schedule_input_notification_text"
+                    android:layout_weight="3"
+                    android:text="7일전"/>
+            </LinearLayout>
+            <LinearLayout style="@style/schedule_input_layout_center">
+                <TextView
+                    style="@style/schedule_input_left_text"
+                    android:text="D-Day"
+                    android:layout_weight="1"/>
+                <TextView
+                    style="@style/schedule_input_underline_text"
+                    android:id="@+id/schedule_input_Dday_text"
+                    android:layout_weight="3.2"
+                    android:text="설정안함"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout style="@style/schedule_input_layout_center"
+            android:layout_weight="0.6">
+            <TextView
+                style="@style/schedule_input_left_text"
+                android:id="@+id/schedule_input_selectcolor_btn"
+                android:text="색상"
+                android:layout_weight="1"/>
+            <Button
+                android:layout_width="60dp"
+                android:layout_height="25dp"
+                android:background="@drawable/stroke_btn"
+                />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_weight="2.8"/> <!--빈공간-->
+        </LinearLayout>
+        <LinearLayout style="@style/schedule_input_layout">
+            <LinearLayout style="@style/schedule_input_layout_center">
+            <TextView
+                style="@style/schedule_input_left_text"
+                android:id="@+id/schedule_input_place_text"
+                android:text="장소"
+                android:layout_weight="1"/>
+                <TextView
+                    style="@style/schedule_input_underline_text"
+                    android:layout_weight="3"
+                    android:text="설정 안함"/>
+        </LinearLayout>
+            <LinearLayout style="@style/schedule_input_layout_center">
+            <TextView
+                style="@style/schedule_input_left_text"
+                android:text="메모"
+                android:layout_weight="1"
+                />
             <EditText
-                android:layout_width="match_parent"
+                android:id="@+id/schedule_input_content_edittext"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:hint="일정을 입력 하세요"/>
+                android:textSize="13sp"
+                android:maxLines="2"
+                android:layout_weight="4.1"
+                android:hint="메모를 입력하세요"
+                />
+            </LinearLayout>
+        <LinearLayout style="@style/schedule_input_layout_center" />    <!--빈공간-->
         </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1">
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            >
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1">
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1">
-        </LinearLayout>
+    </LinearLayout>
 </LinearLayout>

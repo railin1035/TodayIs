@@ -51,7 +51,7 @@ public class memo_list_adapter extends RecyclerView.Adapter<RecyclerView.ViewHol
                         public void onClick(DialogInterface dialog, int which) {
                             //  ((memo_list)memo_list.mContext).delete_items(input);
                             deleteitem();
-                            memoArrayList.clear();
+                            //memoArrayList.clear();
                         }
                     }).setNegativeButton("취소", new DialogInterface.OnClickListener() {
                 @Override

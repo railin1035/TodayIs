@@ -1,342 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorWhite">
+    android:background="@color/colorWhite"
+    android:orientation="vertical"
+    >
 
-    <!--배경화면 레이아웃-->
+
+
+
     <LinearLayout
-        android:id="@+id/backLayout"
-        android:layout_width="0dp"
-        android:layout_height="299dp"
-        android:orientation="vertical"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="@+id/app_toolbar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent">
-
-
-        <android.support.constraint.ConstraintLayout
-            android:id="@+id/background"
-            android:layout_width="match_parent"
-            android:layout_height="32dp"
-            android:background="@drawable/customborder"
-            app:layout_constraintBottom_toTopOf="@+id/recyclerview_main_listwid"
-            tools:layout_editor_absoluteX="1dp">
-
-            <ImageButton
-                android:id="@+id/backButton"
-                android:layout_width="58dp"
-                android:layout_height="0dp"
-                android:layout_marginStart="357dp"
-                android:background="#00ff0000"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/displayarrow" />
-
-
-        </android.support.constraint.ConstraintLayout>
-
-        <!--배경화면 레이아웃-->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="107dp"
-            android:background="@drawable/customborder"
-            android:orientation="horizontal">
-
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="31.5dp"
-                android:layout_marginTop="49.5dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/backtext"
-                    android:layout_width="28dp"
-                    android:layout_height="11.5dp"
-                    android:layout_gravity="center"
-                    android:text="배경색"
-                    android:textColor="@color/colorBlack55"
-                    android:textSize="10sp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="31.5dp"
-                android:layout_marginTop="46dp"
-                android:orientation="vertical">
-
-                <Button
-                    android:id="@+id/backcolorbtn"
-                    style="?android:attr/borderlessButtonStyle"
-                    android:layout_width="45.4dp"
-                    android:layout_height="21dp"
-                    android:background="@drawable/colorbuttoncustomborder" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="14.6dp"
-                android:layout_marginTop="45dp"
-                android:orientation="vertical">
-
-                <ImageButton
-                    android:id="@+id/backgrabtn"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="#00ff0000"
-                    app:srcCompat="@drawable/ic_colorpicker_back" />
-            </LinearLayout>
-
-
-        </LinearLayout>
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="103dp"
-            android:background="@drawable/customborder"
-            android:orientation="horizontal">
+            android:layout_height="250dp"
+            android:orientation="vertical">
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="31.5dp"
-                android:layout_marginTop="49.5dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/textView3"
-                    android:layout_width="28dp"
-                    android:layout_height="11.5dp"
-                    android:layout_gravity="center"
-                    android:text="글씨색"
-                    android:textColor="@color/colorBlack55"
-                    android:textSize="10sp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="31.5dp"
-                android:layout_marginTop="46dp"
-                android:orientation="vertical">
-
-                <Button
-                    android:id="@+id/textcolorbtn"
-                    android:layout_width="45.4dp"
-                    android:layout_height="21dp"
-                    android:background="@drawable/colorbuttoncustomborder"
-                    android:text="" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="14.6dp"
-                android:layout_marginTop="46dp"
-                android:orientation="vertical">
-
-                <ImageButton
-                    android:id="@+id/textgrabtn"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="#00ff0000"
-                    app:srcCompat="@drawable/ic_colorpicker_back" />
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="51.5dp"
-                android:layout_marginTop="49.5dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/text"
-                    android:layout_width="37.5dp"
-                    android:layout_height="11.5dp"
-                    android:layout_gravity="center"
-                    android:text="글씨크기"
-                    android:textColor="@color/colorBlack55"
-                    android:textSize="10sp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="31.5dp"
-                android:layout_marginTop="46dp"
-                android:orientation="vertical">
-
-
-                <Button
-                    android:id="@+id/button8"
-                    android:layout_width="45.4dp"
-                    android:layout_height="21dp"
-                    android:layout_gravity="center"
-                    android:background="@drawable/displaytextsizecustomborder"
-                    android:text="13"
-                    android:textColor="#a7abab"
-                    android:textSize="10sp" />
-            </LinearLayout>
-
+            <FrameLayout
+                android:id="@+id/framlayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            </FrameLayout>
         </LinearLayout>
 
-    </LinearLayout>
-
-
-    <!-- 테마 레이아웃 -->
-    <LinearLayout
-        android:id="@+id/themeLayout"
-        android:layout_width="0dp"
-        android:layout_height="299dp"
-        android:orientation="vertical"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="@+id/app_toolbar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <android.support.constraint.ConstraintLayout
-            android:id="@+id/theme"
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/app_toolbar"
             android:layout_width="match_parent"
-            android:layout_height="32dp"
-            android:background="@drawable/customborder"
-            app:layout_constraintBottom_toTopOf="@+id/recyclerview_main_listwid"
-            tools:layout_editor_absoluteX="1dp">
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            app:contentInsetStart="0dp"
+            app:contentInsetEnd="0dp"/>
 
-            <ImageButton
-                android:id="@+id/themeButton"
-                android:layout_width="58dp"
-                android:layout_height="0dp"
-                android:layout_marginStart="357dp"
-                android:background="#00ff0000"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/displayarrow" />
-
-        </android.support.constraint.ConstraintLayout>
-
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/recyclerview_main_listtheme"
-            android:layout_width="429dp"
-            android:layout_height="211dp"
-            android:layout_marginLeft="1dp"
-            android:layout_marginRight="1dp"
-            android:layout_marginBottom="56dp"
-            android:background="@drawable/customborder"
-            android:scrollbarFadeDuration="0"
-            android:scrollbarSize="5dp"
-            android:scrollbarThumbVertical="@android:color/darker_gray"
-            android:scrollbars="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintVertical_weight="9"
-            tools:listitem="@layout/item_list"
-            tools:spanCount="5">
-
-        </android.support.v7.widget.RecyclerView>
 
     </LinearLayout>
-    <!-- 테마 레이아웃 -->
 
-    <!-- 위젯 레이아웃 -->
-    <LinearLayout
-        android:id="@+id/widgetLayout"
-        android:layout_width="0dp"
-        android:layout_height="299dp"
-        android:orientation="vertical"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="@+id/app_toolbar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <android.support.constraint.ConstraintLayout
-            android:id="@+id/widtest"
-            android:layout_width="match_parent"
-            android:layout_height="32dp"
-            android:background="@drawable/customborder"
-            app:layout_constraintBottom_toTopOf="@+id/recyclerview_main_listwid"
-            tools:layout_editor_absoluteX="1dp">
-
-            <ImageButton
-                android:id="@+id/widgetButton"
-                android:layout_width="58dp"
-                android:layout_height="0dp"
-                android:layout_marginLeft="357dp"
-                android:background="#00ff0000"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/displayarrow" />
-
-        </android.support.constraint.ConstraintLayout>
-
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/recyclerview_main_listwid"
-            android:layout_width="429dp"
-            android:layout_height="211dp"
-            android:layout_marginLeft="1dp"
-            android:layout_marginRight="1dp"
-            android:layout_marginBottom="56dp"
-            android:background="@drawable/customborder"
-            android:scrollbarFadeDuration="0"
-            android:scrollbarSize="5dp"
-            android:scrollbarThumbVertical="@android:color/darker_gray"
-            android:scrollbars="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintVertical_weight="9"
-            tools:listitem="@layout/item_list"
-            tools:spanCount="5">
-
-        </android.support.v7.widget.RecyclerView>
-
-    </LinearLayout>
-    <!-- 위젯 레이아웃 -->
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="280dp"
-        android:layout_marginEnd="176dp"
-        android:text="TextView"
-        android:textColor="@color/colorAccent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/app_toolbar"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:background="@color/colorPrimary"
-        app:contentInsetStart="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>

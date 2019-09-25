@@ -27,7 +27,7 @@
       <android.support.v7.widget.RecyclerView
           style="@style/default_match_Layout"
           android:id="@+id/list_recycle"
-          android:scrollbars="vertical"
+          android:scrollbars="none"
           toos:listitem="@layout/memo_filed"
           />
         <android.support.design.widget.FloatingActionButton

@@ -6,6 +6,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -94,6 +95,7 @@ public class EurnSignUp extends AppCompatActivity {
         //체크박스
 
         //비밀번호 6자리 밑에 텍스트
+
         passsix.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -146,30 +148,29 @@ public class EurnSignUp extends AppCompatActivity {
 
                 if(s.length() > 6){
                     passsix.setTextColor(passprimary);
-                    passsixcheck.setTextColor(passprimary);
-                    passsixcheck.setText("비밀번호가 6자리 이상입니다.");
-                }else if(s.length() == 0){
+                    passsixcheck.setVisibility(View.INVISIBLE);
+                }
+                else if(s.length() == 0){
                     passifcheckbool = false;
                 }
 
-                    if(s.length() > 6  && passsix.getText().toString().equals(passcheck.getText().toString()) ){
-                    passsix.setTextColor(passprimary);
-                    passsixcheck.setTextColor(passprimary);
-                    passsixcheck.setText("비밀번호가 6자리 이상입니다.");
+                 if(s.length() > 6  && passsix.getText().toString().equals(passcheck.getText().toString()) ){
+                 passsix.setTextColor(passprimary);
+                 passsixcheck.setVisibility(View.INVISIBLE);
 
 
-                    passcheck.setTextColor(passprimary);
-                    passcheckhint.setText("비밀번호 일치");
-                    passcheckhint.setTextColor(passprimary);
+                  passcheck.setTextColor(passprimary);
+                  passcheckhint.setText("비밀번호 일치");
+                  passcheckhint.setTextColor(passprimary);
 
-                    passifcheckbool = true;
+                  passifcheckbool = true;
 
                 }
                 else if(s.length() > 6 && !passsix.getText().toString().equals(passcheck.getText().toString())){
-                        passcheck.setTextColor(passcolorRed);
-                        passcheckhint.setTextColor(passcolorRed);
-                        passcheckhint.setText("비밀번호 불일치");
-                        passifcheckbool = false;
+                    passcheck.setTextColor(passcolorRed);
+                    passcheckhint.setTextColor(passcolorRed);
+                    passcheckhint.setText("비밀번호 불일치");
+                    passifcheckbool = false;
                     }
 
                 else if(!passsix.getText().toString().equals(passcheck.getText().toString())){

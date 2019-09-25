@@ -25,7 +25,6 @@ import com.ghc.tdi_main.Memo.memo_edit;
 import java.util.ArrayList;
 
 public class memo_list_adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
-    private String editNewTitle;
     private static ArrayList<memo_list_items> memoArrayList;
 
 
@@ -35,7 +34,6 @@ public class memo_list_adapter extends RecyclerView.Adapter<RecyclerView.ViewHol
 
     public static class MyViewHolder extends RecyclerView.ViewHolder implements View.OnLongClickListener{
         TextView title, memo, create_date, update_date;
-        //EditText editTitle, editMemo, editCreate_date, editUpdate_date;
         LinearLayout layout;
         AlertDialog dialog;
         MyViewHolder(View view) {

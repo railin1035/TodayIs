@@ -181,10 +181,56 @@
         <item name="android:textSize">13sp</item>
         <item name="android:textStyle">bold</item>
     </style>
+    <style name="schedule_input_underline_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:background">@drawable/text_underline</item>
+    </style>
+    <style name="schedule_input_layout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+    <style name="schedule_input_layout_center">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+    <style name="schedule_input_rectangle_btn">
+        <item name="android:layout_width">55dp</item>
+        <item name="android:layout_height">25dp</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:background">@color/colorWhite</item>
+    </style>
                                                                                     <!--//schedule_input-->
     <!--**********************************************************************************//일정**************************************************************************************-->
 
     <!--**********************************************************************************기본값**************************************************************************************-->
+    <!--툴바-->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:statusBarColor">#000</item>
+    </style>
+    <style name="AppTheme.NoActionBar">
+        <item name="android:windowActionBar">false</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    <!--//툴바-->
     <!--vertical match_LinearLayout-->
     <style name="vertical_match_LinearLayout">
         <item name="android:layout_width">match_parent</item>

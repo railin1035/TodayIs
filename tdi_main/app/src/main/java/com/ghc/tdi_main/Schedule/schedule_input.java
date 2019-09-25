@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.ghc.tdi_main.Main.select_main;
 import com.ghc.tdi_main.R;
 
 public class schedule_input extends AppCompatActivity{
@@ -29,7 +28,7 @@ public class schedule_input extends AppCompatActivity{
         backbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(schedule_input.this, select_main.class);
+                Intent intent = new Intent(schedule_input.this, schedule_list.class);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
                 finish();
@@ -39,7 +38,7 @@ public class schedule_input extends AppCompatActivity{
         tbackbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(schedule_input.this,select_main.class);
+                Intent intent = new Intent(schedule_input.this,schedule_list.class);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
                 finish();

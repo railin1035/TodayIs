@@ -29,6 +29,7 @@
         <activity android:name=".Display.Display_main"></activity>
         <activity android:name=".Login.FirstMain"></activity>
         <activity android:name=".Login.EurnSignUp"></activity>
+        <activity android:name=".Schedule.schedule_list"></activity>
         <activity android:name=".Schedule.schedule_input"></activity>
     </application>
 

@@ -18,8 +18,11 @@
                 android:id="@+id/updated_alignment"
                 android:title="수정일순"/>
             <item
-                android:id="@+id/help"
-                android:title="도움말"/>
+            android:id="@+id/help"
+            android:title="도움말"/>
+            <item
+                android:id="@+id/delete"
+                android:title="삭제"/>
         </menu>
     </item>
 </menu>

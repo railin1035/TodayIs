@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/primary_toolbar"
+    android:gravity="center_vertical"
+    android:layout_gravity="bottom"
+    android:paddingLeft="40dp">
+    <ImageButton
+        android:id="@+id/edit_bar_text"
+        android:layout_width="@dimen/memo_edit_iconbar_width"
+        android:layout_height="@dimen/memo_edit_iconbar_height"
+        android:background="@drawable/default_text"
+        android:layout_marginRight="20dp" />
+    <ImageButton
+        android:id="@+id/edit_bar_background"
+        android:layout_width="@dimen/memo_edit_iconbar_width"
+        android:layout_height="@dimen/memo_edit_iconbar_height"
+        android:background="@drawable/ic_colorpicker" />
+</LinearLayout>

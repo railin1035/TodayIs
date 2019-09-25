@@ -1,6 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--**********************************************************************************커스텀**************************************************************************************-->
+    <!--툴바-->
+      <!--기본 툴바-->
+    <style name="primary_toolbar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?attr/actionBarSize</item>
+        <item name="android:background">@color/colorPrimary</item>
+    </style>
+      <!--//기본 툴바-->
 
+        <!--뒤로가기 버튼-->
+    <style name="toolbar_back_btn">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/arrow</item>
+        <item name="android:layout_marginLeft">@dimen/primary_toolbar_btn_margin</item>
+    </style>
+        <!--//뒤로가기 버튼-->
+
+        <!--툴바 텍스트-->
+    <style name="toolbar_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">20dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+        <!--//툴바 텍스트-->
+    <!--//툴바-->
+    <!--Fab 버튼-->
+    <style name="fab_btn">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">bottom|end</item>
+        <item name="android:backgroundTint">@color/colorPrimary</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_marginRight">20dp</item>
+        <item name="android:layout_marginBottom">20dp</item>
+        <item name="android:src">@drawable/add_24dp</item>
+    </style>
+    <!--//Fab 버튼-->
+    <!--다이얼로그-->
+        <!--라디오 버튼 다이얼로그-->
     <style name="AlertDialog" parent="Theme.AppCompat.Light.Dialog">
         <item name="android:textColor">@color/colorPrimary</item>
         <item name="android:textSize">16sp</item>
@@ -9,7 +53,237 @@
         <item name="android:background">@drawable/round_box</item>
         <item name="colorAccent">@color/colorPrimary</item><!--라디오버튼색깔-->
     </style>
-    <style name="Toolbar" parent="AppTheme">
-        <item name="android:textColorPrimary">@color/colorWhite</item>
+        <!--//라디오 버튼 다이얼로그-->
+    <!--//다이얼로그-->
+    <!--**********************************************************************************//커스텀**************************************************************************************-->
+
+    <!--**********************************************************************************화면선택**************************************************************************************-->
+                                                                                    <!--select_main.xml-->
+        <!--아이콘 스타일-->
+    <style name="select_main_icon">
+        <item name ="android:layout_width">@dimen/select_main_iconsize</item>
+        <item name="android:layout_height">@dimen/select_main_iconsize</item>
+        <item name="android:padding">@dimen/select_big_iconpadding</item>
     </style>
+    <!--//아이콘 스타일-->
+    <!--폰트 스타일-->
+    <style name="select_main_font">
+        <item name ="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/select_font_size</item>
+        <item name="android:layout_marginTop">@dimen/select_font_margin</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+    <!--//폰트 스타일-->
+                                                                                  <!--//select_main.xml-->
+    <!--**********************************************************************************//화면선택**************************************************************************************-->
+
+    <!--**********************************************************************************설정**************************************************************************************-->
+                                                                                  <!--setting_main.xml-->
+    <!--설정 상단 레이아웃-->
+    <style name="setting_upper_textline_box">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:gravity">center</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:paddingLeft">35dp</item>
+        <item name="android:paddingRight">35dp</item>
+    </style>
+    <!--//설정 상단 레이아웃-->
+    <!--설정 하단 레이아웃-->
+    <style name="setting_under_textline_box">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:gravity">top</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:paddingLeft">20dp</item>
+        <item name="android:paddingRight">20dp</item>
+    </style>
+    <!--//설정 하단 레이아웃-->
+    <!--글 사이 행간격-->
+    <style name="setting_match_wrap_Layout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">29dp</item>
+    </style>
+    <!--//글 사이 행간격-->
+    <!--상단 텍스트-->
+    <style name="setting_upper_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:textColor">@color/colorBlack</item>
+    </style>
+    <!--//상단 텍스트-->
+    <!--상단 스위치-->
+    <style name="setting_upper_switch_btn">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:track">@drawable/switch_track_selector</item>
+        <item name="android:thumb">@drawable/switch_thumb</item>
+    </style>
+    <style name="setting_upper_switch_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+    <!--//상단 스위치-->
+    <!--하단 텍스트-->
+    <style name="setting_under_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:layout_marginTop">20dp</item>
+    </style>
+    <!--//하단 텍스트-->
+    <!--wrap 분할 선 -->
+    <style name="setting_under_line">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:background">@color/colorGrayoff</item>
+    </style>
+    <!--//wrap 분할 선 -->
+                                                                                  <!--//setting_main.xml-->
+                                                                                  <!--setting_notice && setting_notice_filed-->
+    <!--match 분할 선 -->
+    <style name="setting_notice_under_line">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:background">@color/colorGrayoff</item>
+        <!--//match 분할 선 -->
+</style>
+                                                                                  <!--//setting_notice && setting_notice_filed-->
+                                                                                    <!--setting_appinfo-->
+    <!--match 분할 선 -->
+    <style name="setting_info_verson_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:textColor">@color/colorBlack</item>
+        <!--//match 분할 선 -->
+    </style>
+                                                                                    <!--//setting_appinfo->
+    <!-**********************************************************************************//설정**************************************************************************************-->
+
+    <!--**********************************************************************************메모**************************************************************************************-->
+    <!--**********************************************************************************//메모**************************************************************************************-->
+
+    <!--**********************************************************************************기본값**************************************************************************************-->
+    <!--vertical match_LinearLayout-->
+    <style name="vertical_match_LinearLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+    <!--//vertical match_LinearLayout-->
+
+    <!--default match_LinearLayout-->
+    <style name="default_match_Layout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+    <!--//default match_LinearLayout-->
+
+    <!--vertical wrap_LinearLayout-->
+    <style name="vertical_wrap_LinearLayout">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <!--//vertical wrap_LinearLayout-->
+
+    <!--default wrap_LinearLayout-->
+    <style name="default_wrap_Layout">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <!--//default wrap_LinearLayout-->
+
+    <!--vertical match_wrap_LinearLayout-->
+    <style name="vertical_match_wrap_LinearLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <!--//vertical match_wrap_LinearLayout-->
+
+    <!--defalut match_wrap_LinearLayout-->
+    <style name="default_match_wrap_Layout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <!--//default match_wrap_LinearLayout-->
+    <!--default ScrollView-->
+    <style name="default_ScrollView">
+       <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:scrollbars">none</item>
+    </style>
+    <!--검은 글씨-->
+    <style name="default_text_black">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/colorBlack</item>
+    </style>
+    <!--//검은 글씨-->
+    <!--회색 글씨-->
+    <style name="default_text_GrayOff">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/colorGrayoff</item>
+    </style>
+    <!--//회색 글씨-->
+    <!--회색 글씨-->
+    <style name="default_edit_text">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:padding">10dp</item>
+    </style>
+    <!--//회색 글씨-->
+        <!--textbox,colorbox-->
+    <!--색상 버튼 -->
+    <style name="default_color_btn">
+        <item name="android:layout_width">42dp</item>
+        <item name="android:layout_height">21dp</item>
+        <item name="android:background">@color/colorGray</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_marginRight">@dimen/default_color_picker_margin</item>
+    </style>
+    <!--//색상 버튼 -->
+    <!--폰트 크기 버튼 -->
+    <style name="default_fontsize_btn">
+        <item name="android:layout_width">42dp</item>
+        <item name="android:layout_height">21dp</item>
+        <item name="android:textColor">@color/colorBlack55</item>
+        <item name="android:background">@drawable/stroke_btn</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+    <!--//폰트 크기 버튼 -->
+    <!--box 왼쪽 텍스트-->
+    <style name="default_box_left_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#777777</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+    <!--//box 왼쪽 텍스트-->
+     <!--colorpicker image-->
+    <style name="default_colorpicker">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:src">@drawable/main_colorpicker</item>
+    </style>
+    <!--//colorpicker image-->
+        <!--textbox,colorbox-->
+    <!--**********************************************************************************//기본값**************************************************************************************-->
 </resources>

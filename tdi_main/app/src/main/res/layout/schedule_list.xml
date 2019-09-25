@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:toos="http://schemas.android.com/tools"
+    style="@style/vertical_match_LinearLayout"
+    android:background="@color/colorMemo">
+    <android.support.v7.widget.Toolbar
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        style="@style/primary_toolbar"
+        android:id="@+id/schedule_list_app_toolbar">
+        <ImageView
+            style="@style/toolbar_back_btn"
+            android:id="@+id/schedule_list_back_setting"
+            />
+        <TextView
+            style="@style/toolbar_text"
+            android:id="@+id/schedule_list_toolbar_title"
+            android:text="일정"
+            />
+    </android.support.v7.widget.Toolbar>
+
+    <FrameLayout
+        style="@style/default_match_Layout"
+        android:paddingLeft="15dp"
+        android:paddingTop="10dp"
+        android:paddingRight="15dp">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/schedule_list_recycle"
+            style="@style/default_match_Layout"
+            android:scrollbars="none"
+            toos:listitem="@layout/schedule_filed" />
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/schedule_fab_btn"
+            style="@style/fab_btn"
+            app:borderWidth="0dp"
+            app:fabSize="normal"></android.support.design.widget.FloatingActionButton>
+    </FrameLayout>
+</LinearLayout>

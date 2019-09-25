@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/vertical_match_wrap_LinearLayout"
+    android:id="@+id/schedule_list_filed"
+    android:elevation="5dp"
+    android:layout_marginBottom="10dp"
+    >
+    <LinearLayout
+        style="@style/default_wrap_Layout"
+        android:id="@+id/schedule_filed_visibility"
+        android:visibility="visible"
+        android:background="@color/colorMemo"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"> <!--동일한 날짜 카운트시 gone-->
+    <TextView
+        style="@style/default_text_black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:text="2019년 07월 26일"/> <!--날짜 정렬-->
+    </LinearLayout>
+        <LinearLayout style="@style/default_match_wrap_Layout"> <!--박스-->
+            <LinearLayout
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/schedule_filed_category"/> <!--카테고리-->
+            <LinearLayout
+                style="@style/vertical_wrap_LinearLayout"
+                android:layout_weight="20"
+                android:padding="15dp"
+                android:background="@drawable/schedule_filed_content"> <!--내용-->
+                <LinearLayout style="@style/default_match_wrap_Layout"
+                    android:gravity="center_vertical"> <!--타이틀, D-day-->
+                <TextView
+                    style="@style/default_text_black"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:text="일정 타이틀"/>
+                    <TextView
+                        style="@style/default_text_black"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:text="D-day"/>
+                </LinearLayout> <!--//타이틀, D-day-->
+                <TextView
+                    style="@style/default_text_black"
+                    android:textSize="14sp"
+                    android:layout_marginTop="12dp"
+                    android:text="일정 메모"/> <!-- 메모추가 없을시 visible gone-->
+                <LinearLayout
+                    style="@style/default_match_wrap_Layout"
+                    android:layout_marginTop="14dp"> <!--시작일, 종료일-->
+                    <TextView
+                        style="@style/default_text_GrayOff"
+                        android:layout_marginRight="12dp"
+                        android:textSize="12sp"
+                        android:text="시작일"
+                        />
+                    <TextView
+                        style="@style/default_text_GrayOff"
+                        android:id="@+id/memeolist_create_days"
+                        android:textSize="12sp"
+                        android:text="2019.09.23"
+                        />
+                    <LinearLayout
+                        style="@style/default_match_Layout"
+                        android:gravity="end"> <!--종료일-->
+                        <TextView
+                            style="@style/default_text_GrayOff"
+                            android:layout_marginRight="12dp"
+                            android:textSize="12sp"
+                            android:text="종료일"
+                            />
+                        <TextView
+                            style="@style/default_text_GrayOff"
+                            android:id="@+id/memeolist_update_days"
+                            android:textSize="12sp"
+                            android:text="2019.09.24"
+                            />
+                    </LinearLayout> <!--//종료일-->
+                </LinearLayout> <!--//시작일, 종료일-->
+        </LinearLayout> <!--//내용-->
+    </LinearLayout> <!--박스-->
+</LinearLayout> <!--전체-->

@@ -95,7 +95,7 @@ protected void onCreate(Bundle savedInstanceState) {
         notification_btn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                        final String[] notification_infor = new String[]{"날씨", "미세먼지","일정","D-Day","메모"};
+                        final String[] notification_infor = new String[]{"날씨, 미세먼지","메모","일정","D-Day"};
                        android.app.AlertDialog.Builder notification_dialog = new android.app.AlertDialog.Builder(setting_main.this,R.style.AlertDialog);
                         notification_dialog.setTitle("알림 정보");
                         notification_dialog.setSingleChoiceItems(notification_infor, 0, new DialogInterface.OnClickListener() {
@@ -132,7 +132,7 @@ protected void onCreate(Bundle savedInstanceState) {
                 public void onClick(View v) {
                         final String[] infoupdate_infor = new String[]{"켤때마다", "정보 클릭 시","30분","1시간","2시간","4시간","6시간","12시간","24시간"};
                         android.app.AlertDialog.Builder infoupdate_dialog = new android.app.AlertDialog.Builder(setting_main.this,R.style.AlertDialog);
-                        infoupdate_dialog.setTitle("알림 정보");
+                        infoupdate_dialog.setTitle("정보 업데이트");
                         infoupdate_dialog.setSingleChoiceItems(infoupdate_infor, 0, new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {

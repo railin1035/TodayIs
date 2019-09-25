@@ -1,43 +1,39 @@
 package com.ghc.tdi_main.Memo;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.GradientDrawable;
+import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
-import android.support.constraint.ConstraintLayout;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewManager;
-import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
-
 import com.ghc.tdi_main.R;
-import com.ghc.tdi_main.Memo.memo_edit;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.List;
+import java.util.Objects;
 
 public class memo_list_adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
     private ArrayList<memo_list_items> memoArrayList;
+    DatabaseReference databaseReference;
+    List<String> key = new ArrayList<>();
 
-    memo_list_adapter(ArrayList<memo_list_items> memoArrayList) {
+    memo_list_adapter(ArrayList<memo_list_items> memoArrayList, List key) {
         this.memoArrayList = memoArrayList;
+        this.key = key;
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder{
@@ -45,8 +41,7 @@ public class memo_list_adapter extends RecyclerView.Adapter<RecyclerView.ViewHol
         LinearLayout layout;
         AlertDialog dialog;
 
-        int position;
-
+        GradientDrawable roundBox;
         MyViewHolder(View view) {
             super(view);
             layout = view.findViewById(R.id.list_filed);
@@ -55,10 +50,14 @@ public class memo_list_adapter extends RecyclerView.Adapter<RecyclerView.ViewHol
             create_date = view.findViewById(R.id.memeolist_create_days);
             update_date = view.findViewById(R.id.memeolist_update_days);
 
+            roundBox = (GradientDrawable)view.getBackground();
+
+
             layout.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
                 public boolean onLongClick(View v) {
-                    create_dialog("long");
+                    String data = title.getText().toString();
+                    create_dialog(data);
                     return true;
                 }
             });
@@ -74,8 +73,8 @@ public class memo_list_adapter extends RecyclerView.Adapter<RecyclerView.ViewHol
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             //  ((memo_list)memo_list.mContext).delete_items(input);
-                            deleteitem();
-                            //memoArrayList.clear();
+                            deleteitem(input);
+                            memoArrayList.clear();
                         }
                     }).setNegativeButton("취소", new DialogInterface.OnClickListener() {
                 @Override
@@ -87,20 +86,13 @@ public class memo_list_adapter extends RecyclerView.Adapter<RecyclerView.ViewHol
             dialog.show();
         }
 
-        public void deleteitem(){
-            int pos = getAdapterPosition();
+        public void deleteitem(final String input){
+            final int pos = getAdapterPosition();
             memoArrayList.remove(pos);
             notifyDataSetChanged();
-            //String key = memoArrayList.get(position).toString();
-            /*databaseReference = FirebaseDatabase.getInstance().getReference();
-            databaseReference.child("memo_list").child(key).removeValue();*/
+            databaseReference = FirebaseDatabase.getInstance().getReference("memo_list");
+            databaseReference.child(key.get(pos)).removeValue();
         }
-
-        public void findkey(){
-
-        }
-
-
     }
 
     @Override
@@ -109,7 +101,6 @@ public class memo_list_adapter extends RecyclerView.Adapter<RecyclerView.ViewHol
 
         return new MyViewHolder(v);
     }
-
     @Override
     public void onBindViewHolder(final RecyclerView.ViewHolder holder, int index) {
         final MyViewHolder myViewHolder = (MyViewHolder) holder;
@@ -118,6 +109,9 @@ public class memo_list_adapter extends RecyclerView.Adapter<RecyclerView.ViewHol
         myViewHolder.memo.setText(memoArrayList.get(index).getMemo());
         myViewHolder.create_date.setText(memoArrayList.get(index).getUpdate_day());
         myViewHolder.update_date.setText(memoArrayList.get(index).getCreate_day());
+        myViewHolder.memo.setTextColor(Color.parseColor(memoArrayList.get(index).getTargb()));
+        myViewHolder.roundBox.setColor(Color.parseColor(memoArrayList.get(index).getBargb()));
+        myViewHolder.roundBox.setStroke(6, Color.parseColor(memoArrayList.get(index).getBoargb()));
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -126,11 +120,6 @@ public class memo_list_adapter extends RecyclerView.Adapter<RecyclerView.ViewHol
             }
         });
     }
-
     @Override
     public int getItemCount() { return memoArrayList.size(); }
-
-
-
-
 }

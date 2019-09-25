@@ -1,96 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="200dp"
     android:background="@color/colorWhite"
     android:padding="30dp">
-<LinearLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    >
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#777777"
-        android:textSize="13sp"
-        android:lineSpacingExtra="1.5sp"
-        android:layout_marginRight="32dp"
-        android:text="텍스트색"
-        android:layout_gravity="center"
-        />
-
-    <Button
-        android:id="@+id/edit_text_primarycolor"
-        android:layout_width="42dp"
-        android:layout_height="21dp"
-        android:layout_gravity="center"
-        android:layout_marginRight="15dp"
-         />
-    <ImageView
-        android:id="@+id/edit_text_colorpicker"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/main_colorpicker"
-        android:layout_gravity="center"/>
-</LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="40dp">
+    <LinearLayout style="@style/default_wrap_Layout">
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#777777"
-            android:textSize="13sp"
-            android:lineSpacingExtra="1.5sp"
-            android:layout_marginRight="27.5dp"
-            android:text="텍스트크기"
-            android:layout_gravity="center"/>
-
+            style="@style/default_box_left_text"
+            android:layout_marginRight="27dp"
+            android:text="텍스트색상" />
         <Button
-            android:id="@+id/edit_text_size"
-            android:layout_width="44dp"
-            android:layout_height="21dp"
-            android:layout_gravity="center"
-            android:background="@drawable/stroke_btn"
-            android:text=""
-            android:textColor="@color/colorBlack55"
-            android:textSize="10sp" />
+            android:id="@+id/edit_text_primarycolor"
+            style="@style/default_color_btn" />
+        <ImageView
+            style="@style/default_wrap_Layout"
+            android:id="@+id/edit_text_colorpicker"
+            android:src="@drawable/main_colorpicker"
+            android:layout_gravity="center"/>
     </LinearLayout>
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        style="@style/default_wrap_Layout"
+        android:layout_marginTop="40dp">
+        <TextView
+            style="@style/default_box_left_text"
+            android:layout_marginRight="27dp"
+            android:text="텍스트크기" />
+        <Button
+            style="@style/default_fontsize_btn"
+            android:id="@+id/edit_text_size"
+             />
+    </LinearLayout>
+    <LinearLayout
+        style="@style/default_wrap_Layout"
         android:layout_marginTop="40dp">
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:lineSpacingExtra="1.5sp"
+            style="@style/default_box_left_text"
             android:text="텍스트정렬"
-            android:textColor="#777777"
-            android:textSize="13sp"
-            android:layout_marginRight="27.5dp"/>
+            android:layout_marginRight="27dp"/>
         <ImageView
+            style="@style/default_wrap_Layout"
             android:id="@+id/edit_text_left"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:src="@drawable/ic_align_left"
             android:layout_marginRight="16dp"/>
         <ImageView
+            style="@style/default_wrap_Layout"
             android:id="@+id/edit_text_center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:src="@drawable/ic_align_center"
             android:layout_marginRight="16dp"/>
         <ImageView
+            style="@style/default_wrap_Layout"
             android:id="@+id/edit_text_right"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:src="@drawable/ic_align_right"/>
     </LinearLayout>
 </LinearLayout>

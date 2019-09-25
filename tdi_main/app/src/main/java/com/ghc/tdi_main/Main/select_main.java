@@ -8,6 +8,7 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 
 import com.ghc.tdi_main.Display.Display_main;
+import com.ghc.tdi_main.Login.FirstMain;
 import com.ghc.tdi_main.R;
 import com.ghc.tdi_main.Memo.memo_list;
 import com.ghc.tdi_main.Schedule.schedule_list;
@@ -42,6 +43,7 @@ public class select_main extends AppCompatActivity implements View.OnClickListen
 
         mypagebtn = findViewById(R.id.m_mypage_btn); // 마이페이지
         helpbtn = findViewById(R.id.m_help_btn); //도움말
+        helpbtn.setOnClickListener(this);
     }
 
     @Override
@@ -74,7 +76,10 @@ public class select_main extends AppCompatActivity implements View.OnClickListen
 
         }
         if(v.getId()==R.id.m_help_btn){
-
+            Intent intent = new Intent(select_main.this, FirstMain.class);
+            startActivity(intent);
+            overridePendingTransition(0, 0);
+            finish();
         }
     }
 }

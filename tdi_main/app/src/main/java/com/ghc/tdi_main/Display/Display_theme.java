@@ -1,21 +1,14 @@
 package com.ghc.tdi_main.Display;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.Display;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import android.widget.ImageButton;
-import android.widget.Toast;
 
 import com.ghc.tdi_main.R;
 import java.util.ArrayList;
@@ -27,8 +20,6 @@ public class Display_theme extends Fragment {
     private Display_Adapter display_adapter;
     private RecyclerView.LayoutManager mLayoutManager;
     private ArrayList<Display_widgetdata> display_widgetdata;
-    private ImageButton imgbtns;
-    private Display_main display_main;
 
 
     private int count = 1;
@@ -36,37 +27,14 @@ public class Display_theme extends Fragment {
 
     }
 
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
 
-        display_main = (Display_main) getActivity();
-    }
 
- /*   @Override
-    public void onDetach() {
-        super.onDetach();
-
-        display_main = null;
-    }*/
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.display_theme_layout, container, false);
-        display_main = new Display_main();
-
-       /* imgbtns = (ImageButton) view.findViewById(R.id.themebackbtn);
-        imgbtns.setOnClickListener(new ImageButton.OnClickListener() {
-
-        @Override
-        public void onClick(View view) {
-
-        Toast.makeText(getContext(), "화살표 먹힘", Toast.LENGTH_SHORT).show();
-        display_main.onFragmentChange(1)
-            }
-      });*/
 
         mRecyclerView = (RecyclerView) view.findViewById(R.id.recyclerview_main_listtheme);
         mRecyclerView.setHasFixedSize(true);//아이템 추가, 삭제가 되더라도 뷰의 크기가 변동되지 않도록 설정.

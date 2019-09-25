@@ -14,4 +14,5 @@
     <color name="firstPrimary">#8095c6ed</color>
     <color name="colorRed">#ed3434</color>
     <color name="loginClick">#00508f</color>
+    <color name="mine_shaft">#303030</color><!--잠금화면 배경색-->
 </resources>

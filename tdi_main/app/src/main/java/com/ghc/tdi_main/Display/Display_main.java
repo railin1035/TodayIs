@@ -2,41 +2,31 @@ package com.ghc.tdi_main.Display;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.constraint.ConstraintLayout;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.view.Display;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageButton;
-import android.widget.LinearLayout;
 import android.widget.Toast;
-import android.support.v4.app.FragmentManager;
 
 
 import com.ghc.tdi_main.Main.select_main;
 import com.ghc.tdi_main.R;
 
-import java.util.ArrayList;
 
 public class Display_main  extends AppCompatActivity {
 
+    //메뉴아이템 선언
     MenuItem wid,theme,color;
 
-    private static String TAG = "recyclerview_example";
-    private int count = -1;
 
+
+    //프라그먼트 클래스 객체화
     Display_theme display_theme;
     Display_color display_color;
     Display_widget display_widget;
-    //FragmentTransaction transaction;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,8 +49,6 @@ public class Display_main  extends AppCompatActivity {
         display_color = new Display_color();
         display_widget = new Display_widget();
 
-        //themebackbtns = (ImageButton)findViewById(R.id.themebackbtn);
-       // themebackbtns.setOnClickListener();
 
     }
 
@@ -70,7 +58,6 @@ public class Display_main  extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate( R.menu.display_appbar, menu );
-        //getMenuInflater().inflate(R.menu.appbar_action, menu) ;
 
         wid = menu.findItem(R.id.widgets);
         theme = menu.findItem(R.id.them);
@@ -83,6 +70,8 @@ public class Display_main  extends AppCompatActivity {
     //아이콘 터치마다 발생할 이벤트 설정
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+
+        //프라그먼트를 리플레이스 시키기 위한 프라그먼트 트렌잭션 선언
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
 
         switch (item.getItemId()) {
@@ -102,6 +91,7 @@ public class Display_main  extends AppCompatActivity {
 
                 wid.setIcon(R.drawable.ic_widget_on);
 
+                //프레임 레이아웃에 display_widget를 리플레이스
                 transaction.replace(R.id.framlayout, display_widget);
                 transaction.commit();
 
@@ -114,6 +104,7 @@ public class Display_main  extends AppCompatActivity {
 
                 theme.setIcon(R.drawable.ic_theme_on);
 
+                //프레임 레이아웃에 display_theme를 리플레이스
                 transaction.replace(R.id.framlayout, display_theme);
                 transaction.commit();
 
@@ -126,6 +117,7 @@ public class Display_main  extends AppCompatActivity {
 
                 color.setIcon(R.drawable.ic_colorpicker_on);
 
+                //프레임 레이아웃에 display_color를 리플레이스
                 transaction.replace(R.id.framlayout, display_color);
                 transaction.commit();
 
@@ -141,33 +133,31 @@ public class Display_main  extends AppCompatActivity {
       }
 
 
-
+  //테마에서 닫기버튼 눌럯을때 display_theme를 삭제
     public void isclick(View view) {
 
-
-       // transaction.replace(R.id.framlayout, display_theme);
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.remove(display_theme);
         transaction.commit();
         theme.setIcon(R.drawable.ic_theme);
-        Toast.makeText(getApplicationContext(),"메인에서먹힘",Toast.LENGTH_SHORT).show();
     }
 
+    //테마에서 닫기버튼 눌럯을때 display_widget을 삭제
     public void widgetclick(View view) {
+
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.remove(display_widget);
         transaction.commit();
         wid.setIcon(R.drawable.ic_widget);
-        Toast.makeText(getApplicationContext(),"위젯먹힘",Toast.LENGTH_SHORT).show();
 }
 
-
+    //테마에서 닫기버튼 눌럯을때 display_color를 삭제
     public void colorclick(View view) {
+
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.remove(display_color);
         transaction.commit();
         color.setIcon(R.drawable.ic_colorpicker);
-        Toast.makeText(getApplicationContext(),"컬러에서먹힘",Toast.LENGTH_SHORT).show();
     }
 }
 

@@ -3,10 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app.iml" filepath="$PROJECT_DIR$/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../colorpicker/colorpicker.iml" filepath="$PROJECT_DIR$/../colorpicker/colorpicker.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../colorpickerdialog/colorpickerdialog.iml" filepath="$PROJECT_DIR$/../colorpickerdialog/colorpickerdialog.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../colorselecter/colorselecter.iml" filepath="$PROJECT_DIR$/../colorselecter/colorselecter.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../tdi_main.iml" filepath="$PROJECT_DIR$/../tdi_main.iml" />
     </modules>
   </component>
 </project>

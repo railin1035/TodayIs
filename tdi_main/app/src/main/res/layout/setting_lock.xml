@@ -42,28 +42,34 @@
                 <TextView
                     style="@style/setting_upper_text"
                     android:text="드래그" />
+
                 <TextView
+                    android:id="@+id/Drag_text"
                     style="@style/setting_upper_switch_text"
-                    android:textColor="@color/colorGrayoff"
-                    android:text="설정 안함" />
+                    android:text="설정 안함"
+                    android:textColor="@color/colorGrayoff" />
             </LinearLayout>
             <LinearLayout style="@style/setting_match_wrap_Layout">
                 <TextView
                     style="@style/setting_upper_text"
                     android:text="비밀번호" />
+
                 <TextView
+                    android:id="@+id/Password_text"
                     style="@style/setting_upper_switch_text"
-                    android:textColor="@color/colorPrimary"
-                    android:text="수정" />
+                    android:text="설정 안함"
+                    android:textColor="@color/colorGrayoff" />
             </LinearLayout>
             <LinearLayout style="@style/setting_match_wrap_Layout">
                 <TextView
                     style="@style/setting_upper_text"
                     android:text="패턴" />
+
                 <TextView
+                    android:id="@+id/Pattern_text"
                     style="@style/setting_upper_switch_text"
-                    android:textColor="@color/colorGrayoff"
-                    android:text="설정 안함" />
+                    android:text="설정 안함"
+                    android:textColor="@color/colorGrayoff" />
             </LinearLayout>
         </LinearLayout>
         <View

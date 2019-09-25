@@ -18,7 +18,7 @@ public class Display_color extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
+        //display_color_layout을 inflate
         return inflater.inflate(R.layout.display_color_layout, container, false);
     }
 }

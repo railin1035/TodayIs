@@ -27,8 +27,7 @@
              <LinearLayout style="@style/default_match_wrap_Layout">
                 <TextView
                     style="@style/setting_upper_text"
-                    android:text="잠금 화면에서 보기"
-                    />
+                    android:text="잠금 화면에서 보기" />
                 <Switch
                     android:id="@+id/lockview_switch"
                     style="@style/setting_upper_switch_btn" />
@@ -41,8 +40,7 @@
                     android:text="상단바에 정보 고정" />
                 <Switch
                     android:id="@+id/bar_switch"
-                    style="@style/setting_upper_switch_btn"
-                    />
+                    style="@style/setting_upper_switch_btn" />
             </LinearLayout>
             <!--//상단바에 정보 고정-->
             <!--푸시 알림 설정-->
@@ -89,7 +87,8 @@
                 <TextView
                     style="@style/setting_upper_switch_text"
                     android:id="@+id/lock_switch"
-                    android:text="안함" />
+                    android:textColor="@color/colorGrayoff"
+                    android:text="설정 안함" />
             </LinearLayout>
             <!--//잠금 설정-->
     </LinearLayout>
@@ -101,7 +100,7 @@
         <!--분할 선-->
         <View style="@style/setting_under_line" />
         <!--//분할 선-->
-        <!--아래 내부 레이아웃 (분할 선 밖에 빼려고 하나 더 만든 레이아웃)-->
+        <!--아래 내부 레이아웃-->
         <LinearLayout
             style="@style/vertical_match_wrap_LinearLayout"
             android:paddingLeft="15dp">

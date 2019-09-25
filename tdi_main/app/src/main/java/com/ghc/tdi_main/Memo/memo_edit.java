@@ -8,6 +8,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -21,25 +22,24 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.support.v7.widget.RecyclerView.ViewHolder;
-import com.ghc.tdi_main.Memo.memo_list;
 import java.util.ArrayList;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 import com.ghc.tdi_main.R;
 import com.github.furkanozalp.colorpickerdialog.ClickListener;
 import com.github.furkanozalp.colorpickerdialog.ColorPicker;
-import java.util.ArrayList;
 import java.util.Locale;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import top.defaults.colorpicker.ColorPickerPopup;
+
+import static android.view.KeyEvent.KEYCODE_BACK;
+import static android.view.KeyEvent.KEYCODE_ENTER;
 
 public class memo_edit extends AppCompatActivity implements View.OnClickListener {
         /*컬러 세팅*/
@@ -98,8 +98,6 @@ public class memo_edit extends AppCompatActivity implements View.OnClickListener
         private int edit_color; // 버튼 색상 가져오기1
         private boolean textpopup = false, backgroundpopup = false, borderpopup = false;
         private ColorDrawable colorDrawable; // 버튼 색상 가져오기2
-
-        /*@OnClick({R.id.edit_background_border_colorpicker})*/
         @Override
         protected void onCreate(Bundle savedInstanceState) {
                 super.onCreate(savedInstanceState);
@@ -139,7 +137,7 @@ public class memo_edit extends AppCompatActivity implements View.OnClickListener
                 edit_Title = (EditText) findViewById(R.id.memo_edit_title);
                 edit_Content = (EditText) findViewById(R.id.memo_edit_contents);
                 edit_Createdate = (TextView) findViewById(R.id.memo_edit_day);
-                edit_Editdate=(TextView)findViewById(R.id.memo_edit_day);
+                edit_Editdate = (TextView) findViewById(R.id.memo_edit_day);
 
                 // 시간 설정
                 long now = System.currentTimeMillis();
@@ -289,6 +287,7 @@ public class memo_edit extends AppCompatActivity implements View.OnClickListener
         } // 사용자가 선택한 컬러 리턴
 
         //db 컬러 넣어야 하는부분
+
         public void HideKeyborad() {
                 View view = getCurrentFocus();
                 if (view != null) {
@@ -309,7 +308,6 @@ public class memo_edit extends AppCompatActivity implements View.OnClickListener
                         backgroundsettingbox = false;
                 }
         } // EditText 포커스 오류처리 함수
-
         private void showAlertDialog() {
                 AlertDialog.Builder builder = new AlertDialog.Builder(memo_edit.this);
                 LayoutInflater inflater = getLayoutInflater();
@@ -354,6 +352,7 @@ public class memo_edit extends AppCompatActivity implements View.OnClickListener
                 Window window = dialog.getWindow();
                 window.setAttributes(lp);
         } // 다이얼로그 크기 설정
+
         @Override
         public void onClick(View v) {
                 if(v.getId() == R.id.edit_text_left){
@@ -457,6 +456,7 @@ public class memo_edit extends AppCompatActivity implements View.OnClickListener
                                                 background_border_color_btn.setBackgroundColor(color);
                                         }
                                 });
+
                         borderpopup=false;
                 }
         }

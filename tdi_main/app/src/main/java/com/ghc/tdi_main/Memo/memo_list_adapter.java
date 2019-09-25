@@ -1,36 +1,15 @@
 package com.ghc.tdi_main.Memo;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
-import android.graphics.Color;
-import android.support.annotation.NonNull;
-import android.support.constraint.ConstraintLayout;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewManager;
-import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
-
 import com.ghc.tdi_main.R;
-import com.ghc.tdi_main.Memo.memo_edit;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
-
 import java.util.ArrayList;
 
 public class memo_list_adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
@@ -44,9 +23,6 @@ public class memo_list_adapter extends RecyclerView.Adapter<RecyclerView.ViewHol
         TextView title, memo, create_date, update_date;
         LinearLayout layout;
         AlertDialog dialog;
-
-        int position;
-
         MyViewHolder(View view) {
             super(view);
             layout = view.findViewById(R.id.list_filed);
@@ -95,12 +71,6 @@ public class memo_list_adapter extends RecyclerView.Adapter<RecyclerView.ViewHol
             /*databaseReference = FirebaseDatabase.getInstance().getReference();
             databaseReference.child("memo_list").child(key).removeValue();*/
         }
-
-        public void findkey(){
-
-        }
-
-
     }
 
     @Override
@@ -109,7 +79,6 @@ public class memo_list_adapter extends RecyclerView.Adapter<RecyclerView.ViewHol
 
         return new MyViewHolder(v);
     }
-
     @Override
     public void onBindViewHolder(final RecyclerView.ViewHolder holder, int index) {
         final MyViewHolder myViewHolder = (MyViewHolder) holder;
@@ -126,11 +95,6 @@ public class memo_list_adapter extends RecyclerView.Adapter<RecyclerView.ViewHol
             }
         });
     }
-
     @Override
     public int getItemCount() { return memoArrayList.size(); }
-
-
-
-
 }

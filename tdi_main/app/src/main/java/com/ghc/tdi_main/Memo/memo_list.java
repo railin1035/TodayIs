@@ -37,8 +37,7 @@ public class memo_list extends AppCompatActivity {
     memo_list_adapter list_adapter;
     ArrayList<memo_list_items> memo_arraylist;
     public static Context mContext;
-    static boolean bookmarkbool=false;
-
+    boolean bookmarkbool=false;
 @Override
 protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -85,17 +84,6 @@ protected void onCreate(Bundle savedInstanceState) {
         }
     });
     /*fab버튼*/
-
-
-
-
-
-
-
-
-
-
-
     mContext = this;
     /*리사이클뷰*/
     list_recycle = (RecyclerView) findViewById(R.id.list_recycle);

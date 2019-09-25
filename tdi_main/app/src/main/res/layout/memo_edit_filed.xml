@@ -2,7 +2,8 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     style="@style/vertical_match_LinearLayout"
-    android:background="@color/colorWhite">
+    android:background="@color/colorWhite"
+    >
     <!--상단 툴바-->
     <android.support.v7.widget.Toolbar
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -31,7 +32,7 @@
         <!--메모 EditText-->
         <LinearLayout
             style="@style/vertical_match_LinearLayout"
-            android:background="@drawable/round_box"
+            android:background="@drawable/bottom_no_round_box"
             android:paddingTop="15dp"
             android:paddingLeft="15dp"
             android:paddingRight="15dp"
@@ -41,7 +42,7 @@
                 style="@style/default_text_GrayOff"
                 android:id="@+id/memo_edit_day"
                 android:textSize="14sp"
-                android:text="2019.09.10"/>
+                android:text=""/>
             <!--//오늘 날짜-->
             <!--제목입력-->
             <EditText
@@ -61,9 +62,23 @@
         <!--//메모 EditText-->
     </LinearLayout>
     <!--뒷 배경-->
+    <!--프레임 레이아웃-->
+
+<!--프레임 레이아웃을 텍스트 아이콘바 레이아웃 높이만큼 설정하세요!-->
+
+    <!--프레임 레이아웃-->
     <!--아이콘 바-->
     <include
         layout="@layout/memo_edit_iconbar"
-        android:id="@+id/edit_iconbar_id" />
+        android:id="@+id/edit_iconbar_id"
+    />
+    <include
+        layout="@layout/memo_edit_textsetting"
+        android:id="@+id/edit_text_setting"
+        />
+    <include
+        layout="@layout/memo_edit_backgroundsetting"
+        android:id="@+id/edit_background_setting"
+        />
     <!--//아이콘 바-->
 </LinearLayout>

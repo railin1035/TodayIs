@@ -1,6 +1,9 @@
 package com.ghc.tdi_main.Memo;
 
+import android.content.Context;
 import android.content.Intent;
+import android.support.annotation.NonNull;
+import android.graphics.Color;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,21 +11,33 @@ import android.support.v7.app.AppCompatDelegate;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewManager;
+import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
-
 import com.ghc.tdi_main.Main.select_main;
 import com.ghc.tdi_main.R;
-
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 public class memo_list extends AppCompatActivity {
     RecyclerView list_recycle;
     RecyclerView.LayoutManager myLayoutManager;
-
+    FirebaseDatabase firebaseDatabase;
+    DatabaseReference databaseReference;
+    memo_list_adapter list_adapter;
+    ArrayList<memo_list_items> memo_arraylist;
+    public static Context mContext;
+    boolean bookmarkbool=false;
 @Override
 protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,37 +84,46 @@ protected void onCreate(Bundle savedInstanceState) {
         }
     });
     /*fab버튼*/
+    mContext = this;
     /*리사이클뷰*/
-    list_recycle=(RecyclerView)findViewById(R.id.list_recycle);
+    list_recycle = (RecyclerView) findViewById(R.id.list_recycle);
     list_recycle.setHasFixedSize(true);
     myLayoutManager = new LinearLayoutManager(this);
     list_recycle.setLayoutManager(myLayoutManager);
-
-
-    ArrayList<memo_list_items> memo_items = new ArrayList<>();
-    memo_items.add(new memo_list_items("롸?","루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?루?","2019.08.04","2019.08.08"));
-    memo_items.add(new memo_list_items("롸?","루?","2019.08.04","2019.08.08"));
-    memo_items.add(new memo_list_items("롸?","루?","2019.08.04","2019.08.08"));
-    memo_items.add(new memo_list_items("롸?","루?","2019.08.04","2019.08.08"));
-    memo_items.add(new memo_list_items("롸?","루?","2019.08.04","2019.08.08"));
-    memo_items.add(new memo_list_items("롸?","루?","2019.08.04","2019.08.08"));
-    memo_items.add(new memo_list_items("롸?","루?","2019.08.04","2019.08.08"));
-    memo_items.add(new memo_list_items("롸?","루?","2019.08.04","2019.08.08"));
-
-    memo_list_adapter list_adapter = new memo_list_adapter(memo_items);
+    /*리사이클뷰*/
+    memo_arraylist = new ArrayList<>();
+    list_adapter = new memo_list_adapter(memo_arraylist);
     list_recycle.setAdapter(list_adapter);
+
+    firebaseDatabase = FirebaseDatabase.getInstance();
+    databaseReference = firebaseDatabase.getReference().child("memo_list");
+
+    databaseReference.addValueEventListener(new ValueEventListener() {
+        @Override
+        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+            for (DataSnapshot data : dataSnapshot.getChildren()) {
+                memo_list_items data_memo = data.getValue(memo_list_items.class);
+                memo_arraylist.add(data_memo);
+                list_adapter.notifyItemInserted(memo_arraylist.size()-1);
+            }
+            list_adapter.notifyDataSetChanged();
+        }
+        @Override
+        public void onCancelled(@NonNull DatabaseError databaseError) {
+        }
+    });
     /*리사이클뷰*/
 }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.abbbar_search_add, menu);
-
         return true;
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
     switch(item.getItemId()){
         case R.id.created_alignment:
+
             break;
         case R.id.updated_alignment:
             break;

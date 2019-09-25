@@ -5,15 +5,15 @@
     android:gravity="center_vertical"
     android:layout_gravity="bottom"
     android:paddingLeft="40dp">
-    <ImageView
+    <ImageButton
         android:id="@+id/edit_bar_text"
         android:layout_width="@dimen/memo_edit_iconbar_width"
         android:layout_height="@dimen/memo_edit_iconbar_height"
         android:background="@drawable/default_text"
-        android:layout_marginRight="20dp"/>
-    <ImageView
+        android:layout_marginRight="20dp" />
+    <ImageButton
         android:id="@+id/edit_bar_background"
         android:layout_width="@dimen/memo_edit_iconbar_width"
         android:layout_height="@dimen/memo_edit_iconbar_height"
-        android:background="@drawable/ic_colorpicker"/>
+        android:background="@drawable/ic_colorpicker" />
 </LinearLayout>

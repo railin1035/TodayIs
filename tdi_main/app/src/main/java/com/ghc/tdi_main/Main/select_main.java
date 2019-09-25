@@ -4,10 +4,12 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.ImageView;
 
 import com.ghc.tdi_main.Display.Display_main;
 import com.ghc.tdi_main.Help.help_main;
+import com.ghc.tdi_main.Login.FirstMain;
 import com.ghc.tdi_main.R;
 import com.ghc.tdi_main.Memo.memo_list;
 import com.ghc.tdi_main.Settings.setting_main;
@@ -17,6 +19,13 @@ public class select_main extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED
+                | WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON
+                | WindowManager.LayoutParams.FLAG_DISMISS_KEYGUARD
+                | WindowManager.LayoutParams.FLAG_FULLSCREEN
+                | WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN
+                | WindowManager.LayoutParams.FLAG_TURN_SCREEN_ON
+                | WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.select_main);
         ImageView displaybtn,settingbtn,memobtn,helpbtn,calendarbtn;
         /*화면 버튼*/
@@ -60,7 +69,7 @@ public class select_main extends AppCompatActivity {
         helpbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(select_main.this, help_main.class);
+                Intent intent = new Intent(select_main.this, FirstMain.class);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
                 finish();

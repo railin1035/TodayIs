@@ -14,7 +14,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text=""
-        app:layout_constraintRight_toLeftOf="@+id/textview_recyclerview_english"
+        app:layout_constraintRight_toLeftOf="@+id/textview_recyclerview_name"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -22,11 +22,11 @@
 
 
     <TextView
-        android:id="@+id/textview_recyclerview_english"
+        android:id="@+id/textview_recyclerview_name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text=""
-        app:layout_constraintRight_toLeftOf="@+id/textview_recyclerview_korean"
+        app:layout_constraintRight_toLeftOf="@+id/textview_recyclerview_nameorder"
         app:layout_constraintVertical_chainStyle="packed"
         app:layout_constraintLeft_toRightOf="@+id/textview_recyclerview_id"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -34,13 +34,13 @@
 
 
     <TextView
-        android:id="@+id/textview_recyclerview_korean"
+        android:id="@+id/textview_recyclerview_nameorder"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text=""
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintVertical_chainStyle="packed"
-        app:layout_constraintLeft_toRightOf="@+id/textview_recyclerview_english"
+        app:layout_constraintLeft_toRightOf="@+id/textview_recyclerview_name"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

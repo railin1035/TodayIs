@@ -87,7 +87,8 @@
                 <TextView
                     style="@style/setting_upper_switch_text"
                     android:id="@+id/lock_switch"
-                    android:text="안함" />
+                    android:textColor="@color/colorGrayoff"
+                    android:text="설정 안함" />
             </LinearLayout>
             <!--//잠금 설정-->
     </LinearLayout>

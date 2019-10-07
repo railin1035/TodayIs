@@ -3,6 +3,7 @@ package com.ghc.tdi_main.Login;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MotionEvent;
@@ -12,9 +13,15 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.ghc.tdi_main.Main.select_main;
 import com.ghc.tdi_main.R;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class FirstMain extends AppCompatActivity {
 
@@ -27,6 +34,9 @@ public class FirstMain extends AppCompatActivity {
     boolean firstcheck = true;
     int firstint = 0;
     int passint = 0;
+
+    //데이터레퍼런스
+    private DatabaseReference databaseReference;
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +61,9 @@ public class FirstMain extends AppCompatActivity {
         loginbtns = (Button)findViewById(R.id.mainloginbtn);
         erunbtn = (Button)findViewById(R.id.loginbtn);
         googlebtns = (ImageButton)findViewById(R.id.googlebtn);
+
+        //데이터 레퍼런스
+        databaseReference= FirebaseDatabase.getInstance().getReference("User");
 
 
         //이미지 뷰 컬러
@@ -127,11 +140,34 @@ public class FirstMain extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(FirstMain.this, select_main.class);
-                setContentView(R.layout.select_main);
-                startActivity(intent);
-                overridePendingTransition(0, 0);
-                finish();
+
+                databaseReference.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        if(dataSnapshot.child(idText.getText().toString()).exists()){
+                            UserDTO user = dataSnapshot.child(idText.getText().toString()).getValue(UserDTO.class);
+                            if(user.getUserPassword().equals(passText.getText().toString())){
+                                Intent intent = new Intent(FirstMain.this, select_main.class);
+                                setContentView(R.layout.select_main);
+                                startActivity(intent);
+                                overridePendingTransition(0, 0);
+                                finish();
+                            }
+                            else{
+                                Toast.makeText(FirstMain.this,"로그인 실패",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                        else{
+                            Toast.makeText(FirstMain.this,"존재하지 않는 아이디입니다.",Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+
+
             }
         });
         //로그인 화면전환

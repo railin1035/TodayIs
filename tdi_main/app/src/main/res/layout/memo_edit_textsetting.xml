@@ -19,18 +19,7 @@
             android:src="@drawable/main_colorpicker"
             android:layout_gravity="center"/>
     </LinearLayout>
-    <LinearLayout
-        style="@style/default_wrap_Layout"
-        android:layout_marginTop="40dp">
-        <TextView
-            style="@style/default_box_left_text"
-            android:layout_marginRight="27dp"
-            android:text="텍스트크기" />
-        <Button
-            style="@style/default_fontsize_btn"
-            android:id="@+id/edit_text_size"
-             />
-    </LinearLayout>
+
     <LinearLayout
         style="@style/default_wrap_Layout"
         android:layout_marginTop="40dp">

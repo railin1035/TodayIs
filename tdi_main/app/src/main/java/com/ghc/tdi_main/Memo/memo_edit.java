@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.text.Layout;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -104,8 +105,6 @@ public class memo_edit extends AppCompatActivity implements View.OnClickListener
         Button background_border_color_btn; // 테두리 기본 색상
         private ColorPicker text_select_colorpicker, background_select_colorpicker, background_border_select_colorpicker; // select 컬러피커
         /*//select 컬러피커*/
-        @BindView(R.id.edit_text_size)
-        Button text_size_btn; // 폰트 사이즈 버튼
         @BindView(R.id.edit_text_left)
         ImageView text_left_view; // 왼쪽 정렬 버튼
         @BindView(R.id.edit_text_center)
@@ -265,10 +264,6 @@ public class memo_edit extends AppCompatActivity implements View.OnClickListener
                         }
                 });
                 /*//select 컬러피커*/
-                /*폰트 크기 설정*/
-                text_size_btn = findViewById(R.id.edit_text_size);
-                text_size_btn.setOnClickListener(this);
-                /*//폰트 크기 설정*/
 
                 /*정렬 버튼*/
                 text_left_view.setColorFilter(Color.argb(33, 0, 0, 0));
@@ -373,10 +368,9 @@ public class memo_edit extends AppCompatActivity implements View.OnClickListener
                         }
                         Data.add(font_num);
                 } // 다이얼로그 데이터 리스트
-                ArrayAdapter<String> adapter;
+                /*ArrayAdapter<String> adapter;
                 adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, Data);
                 listView.setAdapter(adapter); // 데이터 받기
-                text_size_btn = textsettingview.findViewById(R.id.edit_text_size);
                 listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -389,7 +383,7 @@ public class memo_edit extends AppCompatActivity implements View.OnClickListener
                         public void onClick(View v) {
                                 dialog.cancel();
                         }
-                }); // 닫기
+                }); // 닫기*/
                 WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
                 lp.copyFrom(dialog.getWindow().getAttributes());
                 lp.width = 600;
@@ -404,12 +398,21 @@ public class memo_edit extends AppCompatActivity implements View.OnClickListener
         public void onClick(View v) {
                 if(v.getId() == R.id.edit_text_left){
                         text_left_view.setColorFilter(Color.argb(255,39,132,208));
+                        text_center_view.setColorFilter(Color.argb(255,161,161,161));
+                        text_right_view.setColorFilter(Color.argb(255,161,161,161));
+                        edit_Content.setGravity(Gravity.LEFT);
                 }
                 if(v.getId() == R.id.edit_text_center){
+                        text_left_view.setColorFilter(Color.argb(255,161,161,161));
                         text_center_view.setColorFilter(Color.argb(255,39,132,208));
+                        text_right_view.setColorFilter(Color.argb(255,161,161,161));
+                        edit_Content.setGravity(Gravity.CENTER);
                 }
                 if(v.getId() == R.id.edit_text_right){
+                        text_left_view.setColorFilter(Color.argb(255,161,161,161));
+                        text_center_view.setColorFilter(Color.argb(255,161,161,161));
                         text_right_view.setColorFilter(Color.argb(255,39,132,208));
+                        edit_Content.setGravity(Gravity.RIGHT);
                 }
                 if(v.getId() == R.id.edit_bar_text){
                         HideKeyborad();
@@ -424,9 +427,6 @@ public class memo_edit extends AppCompatActivity implements View.OnClickListener
                         backgroundsettingview.setVisibility(View.VISIBLE);
                         edit_bar_backgroundbtn.setBackgroundResource(R.drawable.ic_colorpicker_on);
                         backgroundsettingbox=true;
-                }
-                if(v.getId() == R.id.edit_text_size){
-                        showAlertDialog();
                 }
                 if(v.getId() == R.id.edit_text_colorpicker){
                         textpopup=true;

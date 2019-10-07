@@ -2,6 +2,7 @@ package com.ghc.tdi_main.Login;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
@@ -15,6 +16,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ghc.tdi_main.R;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class EurnSignUp extends AppCompatActivity {
 
@@ -23,12 +29,17 @@ public class EurnSignUp extends AppCompatActivity {
     TextView passsixcheck, passcheckhint;
     EditText passsix, passcheck, idtext, emailtext;
 
+    private DatabaseReference databaseReference;
+
     public boolean btncheck = false;
     public boolean passcheckbool = true;
     public boolean passifcheckbool = true;
 
     int checkcount = 0;
 
+    public void SignUp(String id, String password, String email){
+
+    }
 
 
     @Override
@@ -56,6 +67,9 @@ public class EurnSignUp extends AppCompatActivity {
         passsixcheck = (TextView)findViewById(R.id.Pass_sixCheck);
         passcheckhint = (TextView)findViewById(R.id.Pass_CheckHint);
         //비밀번호 숫자확인, 일치확인 텍스트
+
+        //파이어베이스 데이터레퍼런스
+        databaseReference = FirebaseDatabase.getInstance().getReference("User");
 
         final int passcolorRed = ContextCompat.getColor(this,R.color.colorRed);
         final int passprimary = ContextCompat.getColor(this, R.color.colorPrimary);
@@ -351,13 +365,35 @@ public class EurnSignUp extends AppCompatActivity {
 
                 //회원가입 조건 모두 충족
                 else if(passsix.getText().toString().length() > 6 && btncheck && !idtext.getText().toString().equals("") && !emailtext.getText().toString().equals("") && passcheckbool){
-                    Toast.makeText(EurnSignUp.this, "회원가입을 축하드립니다.", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(EurnSignUp.this, FirstMain.class);
                     setContentView(R.layout.login_layout);
                     startActivity(intent);
                     overridePendingTransition(0, 0);
                     finish();
                 }
+
+
+                // 파이어베이스 회원가입
+                databaseReference.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        if(dataSnapshot.child(idtext.getText().toString()).exists()){
+                            Toast.makeText(EurnSignUp.this,"이미 존재하는 아이디입니다.",Toast.LENGTH_SHORT).show();
+                        }
+                        else {
+                            UserDTO user = new UserDTO(passsix.getText().toString(),emailtext.getText().toString());
+                            databaseReference.child(idtext.getText().toString()).setValue(user);
+                            Toast.makeText(EurnSignUp.this,"가입이 성공적으로 완료되었습니다.",Toast.LENGTH_SHORT).show();
+                            finish();
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+
             }
         });
 

@@ -17,6 +17,7 @@ import com.ghc.tdi_main.Login.EurnSignUp;
 import com.ghc.tdi_main.Schedule.schedule_input;
 import com.ghc.tdi_main.R;
 import com.ghc.tdi_main.Memo.memo_list;
+import com.ghc.tdi_main.Schedule.schedule_list;
 import com.ghc.tdi_main.Settings.setting_frontlockview;
 import com.ghc.tdi_main.Settings.setting_main;
 
@@ -34,7 +35,7 @@ public class select_main extends AppCompatActivity implements View.OnClickListen
                 | WindowManager.LayoutParams.FLAG_FULLSCREEN);*/
         setContentView(R.layout.select_main);
 
-        ImageView displaybtn,settingbtn,memobtn,schedule_inputbtn,mypagebtn,helpbtn; // 각 이미지별 버튼
+        ImageView displaybtn,settingbtn,memobtn,schedule_listbtn,mypagebtn,helpbtn; // 각 이미지별 버튼
 
         displaybtn = findViewById(R.id.m_display_btn); // 화면
         displaybtn.setOnClickListener(this);

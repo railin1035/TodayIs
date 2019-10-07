@@ -4,6 +4,8 @@
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
     <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.REORDER_TASKS"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <application
         android:allowBackup="true"
         android:icon="@drawable/bigcircletodayisicon"
@@ -13,16 +15,19 @@
         android:theme="@style/AppTheme.NoActionBar"
         >
         <activity android:name=".Main.select_main">
+        </activity>
+        <activity android:name=".Login.FirstMain"></activity>
+        <activity android:name=".Login.EurnSignUp"></activity>
+        <activity android:name=".Settings.setting_main"></activity>
+        <activity android:name=".Settings.setting_lock"></activity>
+        <activity android:name=".Settings.setlock"/>
+        <activity android:name=".Settings.setting_frontlockview">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Login.FirstMain"></activity>
-        <activity android:name=".Login.EurnSignUp"></activity>
-        <activity android:name=".Settings.setting_main"></activity>
-        <activity android:name=".Settings.setting_lock"></activity>
         <activity android:name=".Settings.setting_notice"></activity>
         <activity android:name=".Settings.setting_appinfo"></activity>
         <activity android:name=".Memo.memo_list"></activity>

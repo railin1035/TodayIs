@@ -76,4 +76,5 @@
             style="@style/setting_notice_under_line"
             android:layout_marginTop="20dp" />
     </LinearLayout>
+
 </LinearLayout>

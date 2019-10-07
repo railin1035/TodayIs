@@ -21,8 +21,6 @@ public class Display_main  extends AppCompatActivity {
     //메뉴아이템 선언
     MenuItem wid,theme,color;
 
-
-
     //프라그먼트 클래스 객체화
     Display_theme display_theme;
     Display_color display_color;
@@ -37,14 +35,11 @@ public class Display_main  extends AppCompatActivity {
         setSupportActionBar(tb);
 
 
-       // pager = (ViewPager) findViewById(R.id.pager);
-
         wid = (MenuItem) findViewById(R.id.widgets);
         theme = (MenuItem) findViewById(R.id.them);
         color = (MenuItem) findViewById(R.id.colorpick);
 
-        //fragemt 객체화, 트랙잭션 선언
-
+        //fragemt 객체화
         display_theme = new Display_theme();
         display_color = new Display_color();
         display_widget = new Display_widget();

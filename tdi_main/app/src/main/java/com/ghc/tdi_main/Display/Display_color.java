@@ -11,6 +11,7 @@ import com.ghc.tdi_main.R;
 
 public class Display_color extends Fragment {
 
+
     public Display_color() {
 
 

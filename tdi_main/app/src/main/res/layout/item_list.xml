@@ -20,6 +20,17 @@
         app:layout_constraintTop_toTopOf="parent"
         />
 
+    <!--<ImageButton
+        android:id="@+id/imabtn_recycler"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="?attr/borderlessButtonStyle"
+        android:background="@color/colorPrimary"
+        app:layout_constraintRight_toLeftOf="@+id/textview_recyclerview_name"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />-->
 
     <TextView
         android:id="@+id/textview_recyclerview_name"
@@ -31,7 +42,17 @@
         app:layout_constraintLeft_toRightOf="@+id/textview_recyclerview_id"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
+    <!--<ImageButton
+        android:id="@+id/imabtn_recycler2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="?attr/borderlessButtonStyle"
+        android:background="@color/colorPrimary"
+        app:layout_constraintRight_toLeftOf="@+id/textview_recyclerview_name"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />-->
 
     <TextView
         android:id="@+id/textview_recyclerview_nameorder"
@@ -44,5 +65,15 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
+    <!--<ImageButton
+        android:id="@+id/imabtn_recycler3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="?attr/borderlessButtonStyle"
+        android:background="@color/colorPrimary"
+        app:layout_constraintRight_toLeftOf="@+id/textview_recyclerview_name"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        /-->
 </android.support.constraint.ConstraintLayout>

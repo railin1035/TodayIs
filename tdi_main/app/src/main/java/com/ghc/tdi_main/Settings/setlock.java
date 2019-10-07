@@ -2,6 +2,7 @@ package com.ghc.tdi_main.Settings;
 
 import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
@@ -11,6 +12,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageButton;
+import android.widget.Switch;
 import android.widget.Toast;
 
 import com.andrognito.patternlockview.PatternLockView;
@@ -22,9 +24,7 @@ import com.andrognito.rxpatternlockview.events.PatternLockCompleteEvent;
 import com.andrognito.rxpatternlockview.events.PatternLockCompoundEvent;
 import com.ghc.tdi_main.R;
 
-import java.io.FileOutputStream;
 import java.util.List;
-import java.util.regex.Pattern;
 
 import io.reactivex.functions.Consumer;
 
@@ -34,7 +34,8 @@ public class setlock extends AppCompatActivity {
     String pattern_save;
     patternHelper patternHelper;
     SQLiteDatabase sqlDB;
-
+    public static Context mContext;
+    int finalpassint = 0;
     /*패턴 메소드*/
     private PatternLockViewListener mPatternLockViewListener = new PatternLockViewListener() {
         @Override
@@ -63,6 +64,7 @@ public class setlock extends AppCompatActivity {
 
         @Override
         public void onCleared() {
+
             Log.d(getClass().getName(), "Pattern has been cleared");
         }
     };
@@ -79,6 +81,7 @@ public class setlock extends AppCompatActivity {
 
 
        patternHelper = new patternHelper(this);
+
 
         /*뒤로가기, 확인*/
         patbackbtn = (ImageButton)findViewById(R.id.patter_backbutton);
@@ -98,11 +101,17 @@ public class setlock extends AppCompatActivity {
             public void onClick(View v) {
 
                 sqlDB = patternHelper.getWritableDatabase();
-                sqlDB.execSQL("INSERT INTO passpatternTBL VALUES ( '"
+                patternHelper.onUpgrade(sqlDB, 1, 2); // 인수는 아무거나 입력하면 됨.
+                sqlDB.execSQL("INSERT INTO pass VALUES ( '"
                         + pattern_save +"');");
                 sqlDB.close();
-                String str = String.valueOf(pattern_save);
-                Toast.makeText(getApplicationContext(),"패턴이 저장되었습니다."+str,Toast.LENGTH_SHORT).show();
+                /*setting_lock onChangedText에 int index값 1을 보내줌*/
+                Toast.makeText(getApplicationContext(),"패턴이 저장되었습니다."+pattern_save,Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(setlock.this,setting_lock.class);
+                intent.putExtra("succesint",1);
+                startActivity(intent);
+                overridePendingTransition(0, 0);
+                finish();
             }
         });
 
@@ -116,7 +125,7 @@ public class setlock extends AppCompatActivity {
         mPatternLockView.setViewMode(PatternLockView.PatternViewMode.CORRECT);
         mPatternLockView.setDotAnimationDuration(150);
         mPatternLockView.setPathEndAnimationDuration(100);
-        mPatternLockView.setCorrectStateColor(ResourceUtils.getColor(this, R.color.colorPrimaryop));
+        mPatternLockView.setCorrectStateColor(ResourceUtils.getColor(this, R.color.colorWhite));
         mPatternLockView.setInStealthMode(false);
         mPatternLockView.setTactileFeedbackEnabled(true);
         mPatternLockView.setInputEnabled(true);
@@ -154,18 +163,39 @@ public class setlock extends AppCompatActivity {
                     }
                 });
     }
-    /*------------------------------------------------------------------------------------------*/
+
+
+        public void serchPattern(){
+            sqlDB = patternHelper.getReadableDatabase();
+            Cursor cursor;
+
+            cursor = sqlDB.rawQuery("SELECT * FROM pass;", null);
+            String culName = "";
+
+            while (cursor.moveToNext()) {
+                culName += cursor.getString(0); // culName =>데이터베이스에서 패턴 값 가져와 저장하는String
+            }
+            if (culName.equals(pattern_save)) {
+                Log.d(getClass().getName(),"패턴일치");
+            } else if (!culName.equals(pattern_save)) {
+                Log.d(getClass().getName(),"패턴불일치");
+            }
+            cursor.close();
+            Log.d(getClass().getName(),"culName and pattern_save" + culName +" ---" + pattern_save);
+        }
+
+    /*-----------------------------------데이터베이스-------------------------------------------------------*/
     public class patternHelper extends SQLiteOpenHelper {
         public patternHelper(Context context) {
-            super(context, "lockDB", null, 1);
+            super(context, "pDB", null, 1);
         }
         @Override
         public void onCreate(SQLiteDatabase db) {
-            db.execSQL("CREATE TABLE passpatternTBL ( patternNum NUMERIC);");
+            db.execSQL("CREATE TABLE pass ( patternNum TEXT);");
         }
         @Override
         public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-            db.execSQL("DROP TABLE IF EXISTS passpatternTBL");
+            db.execSQL("DROP TABLE IF EXISTS pass");
             onCreate(db);
         }
     }

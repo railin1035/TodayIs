@@ -5,6 +5,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.CompoundButton;
@@ -22,6 +23,7 @@ public class setting_lock extends AppCompatActivity {
 
     Switch lockonoff;
     TextView draglock,passwordlock,patternlock;
+
 @Override
 protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,8 +46,41 @@ protected void onCreate(Bundle savedInstanceState) {
     draglock.setEnabled(false);passwordlock.setEnabled(false);patternlock.setEnabled(false);
     /*설정 전엔 터치 못하게 만듬*/
     /*드래그,비밀번호,패턴 설정 텍스트뷰*/
-    /*잠금설정 스위치*/
+
+    /*setting_main(거꾸로)에서 값 전달에 의한 이벤트(잠금화면 '설정'일경우)*/
     lockonoff = (Switch)findViewById(R.id.lockview_switch);
+    Intent intent4 = getIntent();
+    int set5 = intent4.getIntExtra("backsettinglock", 0);
+    Log.d(getClass().getName(), "setting_main(거꾸로)!!:" + set5);
+    if(set5 == 1){
+        lockonoff.setChecked(true);
+        patternlock.setText("설정");patternlock.setTextColor(passprimary);
+        Log.d(getClass().getName(), "setting_main(거꾸로)!!: ");
+    }
+    /*setting_main(거꾸로)에서 값 전달에 의한 이벤트(잠금화면 '설정'일경우)*/
+
+
+    /*setlock에서 인텐트한 값*/
+    Intent intent2 = getIntent();
+    int set = intent2.getIntExtra("succesint",2);
+    if(set == 1){
+        lockonoff.setChecked(true);
+        patternlock.setText("설정");patternlock.setTextColor(passprimary);
+        Log.d(getClass().getName(), "설정!!: " + set);
+    }
+    /*setlock에서 인텐트한 값*/
+
+    /*setting_main에서 값 전달에 의한 이벤트*/
+    Intent intent3 = getIntent();
+    int set2 = intent3.getIntExtra("setstart", 2);
+    if(set2 == 1){
+        lockonoff.setChecked(true);
+        patternlock.setText("설정");patternlock.setTextColor(passprimary);
+        Log.d(getClass().getName(), "두번째 설정!!: " + set);
+    }
+    /*setting_main에서 값 전달에 의한 이벤트*/
+
+    /*잠금설정 스위치*/
     lockonoff.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
         @Override
         public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -56,6 +91,8 @@ protected void onCreate(Bundle savedInstanceState) {
                 passwordlock.setEnabled(true);
                 patternlock.setEnabled(true);
                 /*체크 했을때 텍스트뷰를 터치 가능하게함(설정바꾸기 가능하게 열어줌)*/
+
+
                 /* 각 텍스트뷰 별 이벤트*/
                 draglock.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -120,6 +157,7 @@ protected void onCreate(Bundle savedInstanceState) {
             }
         }
     });
+
     /*잠금설정 스위치*/
     ImageView backbtn;
     TextView tbackbtn;
@@ -129,10 +167,22 @@ protected void onCreate(Bundle savedInstanceState) {
     backbtn.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            Intent intent = new Intent(setting_lock.this,setting_main.class);
-            startActivity(intent);
-            overridePendingTransition(0, 0);
-            finish();
+            /*setting_main에 값 전달(패턴설정 모두 완료되었을때(set)*/
+            if(lockonoff.isChecked() && patternlock.getText().toString().equals("설정")) {
+                Intent intent = new Intent(setting_lock.this, setting_main.class);
+                intent.putExtra("settingsucces",1);
+                startActivity(intent);
+                overridePendingTransition(0, 0);
+                finish();
+            }
+            /*setting_main에 값 전달(패턴설정 모두 완료되었을때(set)*/
+            else {
+                Intent intent = new Intent(setting_lock.this, setting_main.class);
+                startActivity(intent);
+                overridePendingTransition(0, 0);
+                finish();
+            }
+
         }
     });
     tbackbtn=(TextView)findViewById(R.id.setting_lock_toolbar_title);
@@ -150,7 +200,17 @@ protected void onCreate(Bundle savedInstanceState) {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.back_action, menu);
-
         return true;
     }
+
+    /*패턴 설정시 텍스트뷰 저장(설정스위치 on, 설정안함 -> 설정)*/
+    /*Intent intent2 = getIntent();
+    public void  patternonChangedText(intent2){
+        if(index == 1) {
+            lockonoff.setChecked(true);
+            Log.d(getClass().getName(), "체크 되었음 !:");
+        }
+        else if(index != 1){
+        }
+    }*/
 }

@@ -16,17 +16,17 @@
         >
         <activity android:name=".Main.select_main">
         </activity>
-        <activity android:name=".Login.FirstMain"></activity>
+        <activity android:name=".Login.FirstMain">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".Login.EurnSignUp"></activity>
         <activity android:name=".Settings.setting_main"></activity>
         <activity android:name=".Settings.setting_lock"></activity>
         <activity android:name=".Settings.setlock"/>
         <activity android:name=".Settings.setting_frontlockview">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".Settings.setting_notice"></activity>
         <activity android:name=".Settings.setting_appinfo"></activity>
@@ -36,7 +36,6 @@
         <activity android:name=".Help.help_main"></activity>
         <activity android:name=".Display.Display_main"></activity>
         <activity android:name=".Schedule.schedule_list"></activity>
-        <activity android:name=".Settings.setlock"/>
         <service android:name=".Settings.Setting_ScreenService"/>
         <receiver android:name=".Settings.Setting_ScreenReceiver"/>
         <activity android:name=".Schedule.schedule_input"></activity>

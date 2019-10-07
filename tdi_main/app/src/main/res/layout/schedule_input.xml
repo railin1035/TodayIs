@@ -36,7 +36,7 @@
                 <TextView
                     style="@style/schedule_input_underline_text"
                     android:id="@+id/schedule_input_start_day_text"
-                    android:text=""/>
+                    android:text="2019년     10월     7일   18:00"/>
             </LinearLayout>
             <LinearLayout style="@style/schedule_input_layout_center">
                 <TextView
@@ -46,7 +46,7 @@
                 <TextView
                     style="@style/schedule_input_underline_text"
                     android:id="@+id/schedule_input_end_day_text"
-                    android:text=""/>
+                    android:text="2019년     10월     7일   18:00"/>
             </LinearLayout>
             <LinearLayout style="@style/schedule_input_layout_center"
                 android:gravity="center_vertical|end">

@@ -80,31 +80,31 @@ public class ColorPicker {
         {
             int color=0;
             if(i==0) {
-            color = Color.argb(255, 120, 130, 140);
+            color = Color.argb(255, 0, 0, 0);
         }
             if(i==1) {
-            color = Color.argb(255, 150, 130, 140);
+            color = Color.argb(255, 250, 40, 40);
             }
             if(i==2) {
-            color = Color.argb(255, 120, 170, 140);
+            color = Color.argb(255, 255, 136, 0);
             }
             if(i==3) {
-             color = Color.argb(255, 120, 130, 200);
+             color = Color.argb(255, 250, 229, 40);
             }
             if(i==4) {
-             color = Color.argb(255, 50, 130, 140);
+                color = Color.argb(255, 0, 181, 48);
             }
             if(i==5) {
-            color = Color.argb(255, 120, 60, 140);
+                color = Color.argb(255, 46, 185, 255);
             }
             if(i==6) {
-            color = Color.argb(255, 120, 130, 80);
+            color = Color.argb(255, 53, 96, 252);
             }
             if(i==7) {
-             color = Color.argb(255, 0, 130, 140);
+             color = Color.argb(255, 163, 91, 235);
             }
             if(i==8) {
-             color = Color.argb(255, 120, 0, 140);
+             color = Color.argb(255, 230, 62, 123);
             }
 
             ImageView imageView = new ImageView(activity);

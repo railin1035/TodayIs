@@ -31,6 +31,7 @@
        >
         <!--메모 EditText-->
         <LinearLayout
+            android:id="@+id/edit_filled"
             style="@style/vertical_match_LinearLayout"
             android:background="@drawable/bottom_no_round_box"
             android:paddingTop="15dp"

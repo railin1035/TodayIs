@@ -5,9 +5,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.GradientDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.text.Layout;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -45,6 +48,9 @@ public class memo_edit extends AppCompatActivity implements View.OnClickListener
         /*컬러 세팅*/
         private static final String SAVED_STATE_KEY_COLOR = "saved_state_key_color";
         private static final int INITIAL_COLOR = 0xFF2785D0;
+        private static final String DEFAULT_TEXT_COLOR = "#FF000000";
+        private static final String DEFAULT_BG_COLOR = "#FFFFFFFF";
+        private static final String DEFAULT_BORDER_COLOR = "#00FFFFFF";
         /*//컬러 세팅*/
         /*database*/
         private FirebaseDatabase mFirebase;
@@ -54,15 +60,33 @@ public class memo_edit extends AppCompatActivity implements View.OnClickListener
         EditText edit_Content;
         TextView edit_Createdate;
         TextView edit_Editdate;
+        LinearLayout layout;
+        GradientDrawable noRoundBox;
 
         String title;
         String content;
         String date;
         String editdate;
+        String targb = DEFAULT_TEXT_COLOR;
+        String bargb = DEFAULT_BG_COLOR;
+        String boargb = DEFAULT_BORDER_COLOR;
+        String align;
 
-        public void writeNewMeMo(String title, String content, String create_day, String update_day) {
-                memo_list_items memo = new memo_list_items(title, content, create_day, update_day);
+
+        // 메모작성 함수
+        public void writeNewMeMo(String title, String content, String create_day, String update_day, String targb, String bargb, String boargb, String align) {
+                memo_list_items memo = new memo_list_items(title, content, create_day, update_day, targb, bargb, boargb, align);
                 databaseReference.child("memo_list").push().setValue(memo);
+                noRoundBox.setColor(Color.rgb(255,255,255));
+        }
+
+        // 색 넣기 함수
+        public String colorChange(int color){
+                int a = Color.alpha(color);
+                int r = Color.red(color);
+                int g = Color.green(color);
+                int b = Color.blue(color);
+                return String.format(Locale.getDefault(), "#%02X%02X%02X%02X",a, r, g, b);
         }
         /*database*/
 
@@ -133,12 +157,17 @@ public class memo_edit extends AppCompatActivity implements View.OnClickListener
                         }
                 });
                 /*//뒤로가기 인텐트*/
+
                 databaseReference = FirebaseDatabase.getInstance().getReference();
                 edit_Title = (EditText) findViewById(R.id.memo_edit_title);
                 edit_Content = (EditText) findViewById(R.id.memo_edit_contents);
                 edit_Createdate = (TextView) findViewById(R.id.memo_edit_day);
                 edit_Editdate = (TextView) findViewById(R.id.memo_edit_day);
 
+                layout = findViewById(R.id.edit_filled);
+                noRoundBox = (GradientDrawable)layout.getBackground();
+
+                // 시간 설정
                 long now = System.currentTimeMillis();
                 Date date = new Date(now);
                 SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
@@ -181,6 +210,12 @@ public class memo_edit extends AppCompatActivity implements View.OnClickListener
                         @Override
                         public void onClick(int color) {
                                 text_color_btn.setBackgroundColor(color);
+                                int a = Color.alpha(color);
+                                int r = Color.red(color);
+                                int g = Color.green(color);
+                                int b = Color.blue(color);
+                                targb = String.format(Locale.getDefault(), "#%02X%02X%02X%02X",a, r, g, b);
+                                edit_Content.setTextColor(Color.parseColor(targb));
                         }
                 });
                 findViewById(R.id.edit_text_primarycolor).setOnClickListener(new View.OnClickListener() {
@@ -195,6 +230,13 @@ public class memo_edit extends AppCompatActivity implements View.OnClickListener
                         @Override
                         public void onClick(int color) {
                                 background_color_btn.setBackgroundColor(color);
+                                text_color_btn.setBackgroundColor(color);
+                                int a = Color.alpha(color);
+                                int r = Color.red(color);
+                                int g = Color.green(color);
+                                int b = Color.blue(color);
+                                bargb = String.format(Locale.getDefault(), "#%02X%02X%02X%02X", a, r, g, b);
+                                noRoundBox.setColor(Color.parseColor(bargb));
                         }
                 });
                 findViewById(R.id.edit_background_primarycolor).setOnClickListener(new View.OnClickListener() {
@@ -203,11 +245,17 @@ public class memo_edit extends AppCompatActivity implements View.OnClickListener
                                 background_select_colorpicker.show();
                         }
                 });
-                background_border_select_colorpicker = new ColorPicker.Builder(this).setTitle("배경 색상").build();
+                background_border_select_colorpicker = new ColorPicker.Builder(this).setTitle("테두리 색상").build();
                 background_border_select_colorpicker.setClickListener(new ClickListener() {
                         @Override
                         public void onClick(int color) {
                                 background_border_color_btn.setBackgroundColor(color);
+                                text_color_btn.setBackgroundColor(color);
+                                int a = Color.alpha(color);
+                                int r = Color.red(color);
+                                int g = Color.green(color);
+                                int b = Color.blue(color);
+                                boargb = String.format(Locale.getDefault(), "#%02X%02X%02X%02X", a, r, g, b);
                         }
                 });
                 findViewById(R.id.edit_background_border_primarycolor).setOnClickListener(new View.OnClickListener() {
@@ -260,7 +308,7 @@ public class memo_edit extends AppCompatActivity implements View.OnClickListener
                                 content = edit_Content.getText().toString();
                                 date = edit_Createdate.getText().toString();
                                 editdate = edit_Editdate.getText().toString();
-                                writeNewMeMo(title, content, date, editdate);
+                                writeNewMeMo(title, content, date, editdate, targb, bargb, boargb, align);
 
                                 Intent intent2 = new Intent(memo_edit.this, memo_list.class);
                                 startActivity(intent2);
@@ -284,6 +332,7 @@ public class memo_edit extends AppCompatActivity implements View.OnClickListener
                 int b = Color.blue(color);
                 return String.format(Locale.getDefault(), "0x%02X%02X%02X%02X", a, r, g, b);
         } // 사용자가 선택한 컬러 리턴
+
         //db 컬러 넣어야 하는부분
 
         public void HideKeyborad() {
@@ -410,6 +459,12 @@ public class memo_edit extends AppCompatActivity implements View.OnClickListener
                                         @Override
                                         public void onColorPicked(int color) {
                                                 text_color_btn.setBackgroundColor(color);
+                                                int a = Color.alpha(color);
+                                                int r = Color.red(color);
+                                                int g = Color.green(color);
+                                                int b = Color.blue(color);
+                                                targb = String.format(Locale.getDefault(), "#%02X%02X%02X%02X",a, r, g, b);
+                                                edit_Content.setTextColor(Color.parseColor(targb));
                                         }
                                 });
                         textpopup=false;
@@ -431,6 +486,12 @@ public class memo_edit extends AppCompatActivity implements View.OnClickListener
                                         @Override
                                         public void onColorPicked(int color) {
                                                 background_color_btn.setBackgroundColor(color);
+                                                int a = Color.alpha(color);
+                                                int r = Color.red(color);
+                                                int g = Color.green(color);
+                                                int b = Color.blue(color);
+                                                bargb = String.format(Locale.getDefault(), "#%02X%02X%02X%02X", a, r, g, b);
+                                                noRoundBox.setColor(Color.parseColor(bargb));
                                         }
                                 });
                         backgroundpopup=false;
@@ -452,6 +513,11 @@ public class memo_edit extends AppCompatActivity implements View.OnClickListener
                                         @Override
                                         public void onColorPicked(int color) {
                                                 background_border_color_btn.setBackgroundColor(color);
+                                                int a = Color.alpha(color);
+                                                int r = Color.red(color);
+                                                int g = Color.green(color);
+                                                int b = Color.blue(color);
+                                                boargb = String.format(Locale.getDefault(), "#%02X%02X%02X%02X", a, r, g, b);
                                         }
                                 });
 

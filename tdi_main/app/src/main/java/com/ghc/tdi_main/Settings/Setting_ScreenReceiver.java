@@ -26,11 +26,10 @@ public class Setting_ScreenReceiver extends BroadcastReceiver {
 
                 km = (KeyguardManager) context.getSystemService(Context.KEYGUARD_SERVICE);
 
-
             if (keyLock == null)
 
                 keyLock = km.newKeyguardLock(Context.KEYGUARD_SERVICE);
-                disableKeyguard();
+                keyLock.disableKeyguard();
                 Intent i = new Intent(context, select_main.class);
                 i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(i);
@@ -48,7 +47,6 @@ public class Setting_ScreenReceiver extends BroadcastReceiver {
         if (intent.getAction().equals(Intent.ACTION_SCREEN_ON)) {
             if (km == null)
                 km = (KeyguardManager) context.getSystemService(Context.KEYGUARD_SERVICE);
-
 
             if (keyLock == null)
                 disableKeyguard();

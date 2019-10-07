@@ -11,6 +11,7 @@ import android.support.v7.app.AppCompatDelegate;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -28,6 +29,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
+import java.util.List;
 
 public class memo_list extends AppCompatActivity {
     RecyclerView list_recycle;
@@ -38,6 +40,7 @@ public class memo_list extends AppCompatActivity {
     ArrayList<memo_list_items> memo_arraylist;
     public static Context mContext;
     boolean bookmarkbool=false;
+    List<String> key = new ArrayList<>();
 @Override
 protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -92,7 +95,7 @@ protected void onCreate(Bundle savedInstanceState) {
     list_recycle.setLayoutManager(myLayoutManager);
     /*리사이클뷰*/
     memo_arraylist = new ArrayList<>();
-    list_adapter = new memo_list_adapter(memo_arraylist);
+    list_adapter = new memo_list_adapter(memo_arraylist, key);
     list_recycle.setAdapter(list_adapter);
 
     firebaseDatabase = FirebaseDatabase.getInstance();
@@ -101,12 +104,18 @@ protected void onCreate(Bundle savedInstanceState) {
     databaseReference.addValueEventListener(new ValueEventListener() {
         @Override
         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
             for (DataSnapshot data : dataSnapshot.getChildren()) {
                 memo_list_items data_memo = data.getValue(memo_list_items.class);
                 memo_arraylist.add(data_memo);
                 list_adapter.notifyItemInserted(memo_arraylist.size()-1);
+                key.add(data.getKey());
+
             }
+            list_adapter = new memo_list_adapter(memo_arraylist,key);
+            list_recycle.setAdapter(list_adapter);
             list_adapter.notifyDataSetChanged();
+
         }
         @Override
         public void onCancelled(@NonNull DatabaseError databaseError) {
@@ -158,6 +167,9 @@ protected void onCreate(Bundle savedInstanceState) {
                 }
             });
             /*//삭제 버튼*/
+
+
+
             break;
         case R.id.updated_alignment:
             break;

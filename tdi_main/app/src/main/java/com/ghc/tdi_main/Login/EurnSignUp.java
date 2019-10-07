@@ -58,7 +58,6 @@ public class EurnSignUp extends AppCompatActivity {
         //비밀번호 숫자확인, 일치확인 텍스트
 
         final int passcolorRed = ContextCompat.getColor(this,R.color.colorRed);
-        final int passcolorblack = ContextCompat.getColor(this,R.color.colorBlack);
         final int passprimary = ContextCompat.getColor(this, R.color.colorPrimary);
 
 
@@ -95,7 +94,6 @@ public class EurnSignUp extends AppCompatActivity {
         //체크박스
 
         //비밀번호 6자리 밑에 텍스트
-
         passsix.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -115,10 +113,12 @@ public class EurnSignUp extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
+
                 if(1 < s.length() || s.length() <= 6 ){
                     passsix.setTextColor(passcolorRed);
                     passsixcheck.setTextColor(passcolorRed);
                     passsixcheck.setText("비밀번호가 6자리 이하입니다.");
+                    passsixcheck.setVisibility(View.VISIBLE);
                     passifcheckbool = false;
                 }
 
@@ -126,22 +126,26 @@ public class EurnSignUp extends AppCompatActivity {
                     passsix.setTextColor(passcolorRed);
                     passsixcheck.setTextColor(passcolorRed);
                     passsixcheck.setText("비밀번호가 6자리 이하입니다.");
+                    passsixcheck.setVisibility(View.VISIBLE);
 
                     passcheck.setTextColor(passcolorRed);
                     passcheckhint.setTextColor(passcolorRed);
                     passcheckhint.setText("비밀번호 불일치");
+                    passcheckhint.setVisibility(View.VISIBLE);
 
                     passifcheckbool = false;
                 }
 
-                if(1 < s.length() || s.length() <= 6 && passcheck.getText().toString().equals(passcheck.getText().toString()) && passcheckbool){
+                if(1 < s.length() || s.length() <= 6 && passcheck.getText().toString().equals(passcheck.getText().toString())){
                     passsix.setTextColor(passcolorRed);
                     passsixcheck.setTextColor(passcolorRed);
                     passsixcheck.setText("비밀번호가 6자리 이하입니다.");
+                    passsixcheck.setVisibility(View.VISIBLE);
 
-                    passcheck.setTextColor(passprimary);
-                    passcheckhint.setTextColor(passprimary);
-                    passcheckhint.setText("비밀번호 일치");
+                    passcheck.setTextColor(passcolorRed);
+                    passcheckhint.setTextColor(passcolorRed);
+                    passcheckhint.setText("비밀번호 일치하지만 6자리 이하입니다.");
+                    passcheckhint.setVisibility(View.VISIBLE);
 
                     passifcheckbool = false;
                 }
@@ -200,19 +204,41 @@ public class EurnSignUp extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if(passsix.getText().length() < 2 && passsixcheck.getText().length() < 2){
+                    passsixcheck.setVisibility(View.INVISIBLE);
+                    passcheckhint.setVisibility(View.INVISIBLE);
+                }
+
+                if(1 < s.length() || s.length() <= 6 && passcheck.getText().toString().equals(passcheck.getText().toString())){
+                  /*  passsix.setTextColor(passcolorRed);
+                    passsixcheck.setTextColor(passcolorRed);
+                    passsixcheck.setText("비밀번호가 6자리 이하입니다.");
+                    passsixcheck.setVisibility(View.VISIBLE);*/
+
+                    passcheck.setTextColor(passcolorRed);
+                    passcheckhint.setTextColor(passcolorRed);
+                    passcheckhint.setText("비밀번호 일치하지만 6자리 이하입니다.");
+                    passcheckhint.setVisibility(View.VISIBLE);
+
+                    passifcheckbool = false;
+                }
 
                 if(!passsix.getText().toString().equals(passcheck.getText().toString())){
                     passcheck.setTextColor(passcolorRed);
                     passcheckhint.setTextColor(passcolorRed);
                     passcheckhint.setText("비밀번호 불일치");
+                    passcheckhint.setVisibility(View.VISIBLE);
                     passcheckbool = false;
              }
 
-             if(passsix.getText().toString().equals(passcheck.getText().toString()) && !passsix.getText().toString().equals("")){
-                    passcheck.setTextColor(passprimary);
+                 if(s.length() > 6 && passsix.getText().toString().equals(passcheck.getText().toString()) && !passsix.getText().toString().equals("")){
+                     passsix.setTextColor(passprimary);
+                     passcheckhint.setVisibility(View.INVISIBLE);
 
-                    passcheckhint.setText("비밀번호 일치");
-                    passcheckhint.setTextColor(passprimary);
+                     passcheck.setTextColor(passprimary);
+                     passcheckhint.setText("비밀번호 일치");
+                     passcheckhint.setTextColor(passprimary);
+                     passcheckhint.setVisibility(View.VISIBLE);
                     passcheckbool = true;
 
                }

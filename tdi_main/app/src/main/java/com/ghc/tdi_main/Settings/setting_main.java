@@ -2,10 +2,10 @@ package com.ghc.tdi_main.Settings;
 
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
@@ -15,7 +15,6 @@ import android.widget.Toast;
 
 import com.ghc.tdi_main.Main.select_main;
 import com.ghc.tdi_main.R;
-import com.ghc.tdi_main.Schedule.schedule_input;
 
 public class setting_main extends AppCompatActivity {
 

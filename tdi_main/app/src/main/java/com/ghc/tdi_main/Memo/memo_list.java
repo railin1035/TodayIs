@@ -2,15 +2,16 @@ package com.ghc.tdi_main.Memo;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.graphics.Color;
-import android.support.design.widget.FloatingActionButton;
-import android.support.v7.app.AppCompatActivity;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatDelegate;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.app.AppCompatDelegate;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.appcompat.widget.Toolbar;
+
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -98,6 +99,7 @@ protected void onCreate(Bundle savedInstanceState) {
     list_adapter = new memo_list_adapter(memo_arraylist, key);
     list_recycle.setAdapter(list_adapter);
 
+    // 파이어베이스 리얼타임베이스 메모 추가
     firebaseDatabase = FirebaseDatabase.getInstance();
     databaseReference = firebaseDatabase.getReference().child("memo_list");
 
@@ -111,10 +113,14 @@ protected void onCreate(Bundle savedInstanceState) {
                 list_adapter.notifyItemInserted(memo_arraylist.size()-1);
                 key.add(data.getKey());
 
+                Log.e("Memo all ArrayList : ",memo_arraylist.get(0).toString());
             }
+
             list_adapter = new memo_list_adapter(memo_arraylist,key);
             list_recycle.setAdapter(list_adapter);
             list_adapter.notifyDataSetChanged();
+
+
 
         }
         @Override

@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     style="@style/vertical_match_LinearLayout"
     android:background="@color/colorWhite">
-    <android.support.v7.widget.Toolbar
+    <androidx.appcompat.widget.Toolbar
     xmlns:android="http://schemas.android.com/apk/res/android"
         style="@style/primary_toolbar"
         android:id="@+id/setting_lock_app_toolbar">
@@ -13,7 +13,7 @@
         style="@style/toolbar_text"
         android:id="@+id/setting_lock_toolbar_title"
         android:text="잠금 설정" />
-</android.support.v7.widget.Toolbar>
+</androidx.appcompat.widget.Toolbar>
         <LinearLayout
             style="@style/setting_upper_textline_box"
             android:layout_weight="5">

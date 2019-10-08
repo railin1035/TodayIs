@@ -1,14 +1,12 @@
 package com.ghc.tdi_main.Memo;
 
 import android.app.AlertDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
-import android.provider.ContactsContract;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
-import android.util.Log;
+
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,9 +20,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
-import java.util.Objects;
 
 public class memo_list_adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
     private ArrayList<memo_list_items> memoArrayList;
@@ -112,6 +108,9 @@ public class memo_list_adapter extends RecyclerView.Adapter<RecyclerView.ViewHol
         myViewHolder.memo.setTextColor(Color.parseColor(memoArrayList.get(index).getTargb()));
         myViewHolder.roundBox.setColor(Color.parseColor(memoArrayList.get(index).getBargb()));
         myViewHolder.roundBox.setStroke(6, Color.parseColor(memoArrayList.get(index).getBoargb()));
+
+
+
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override

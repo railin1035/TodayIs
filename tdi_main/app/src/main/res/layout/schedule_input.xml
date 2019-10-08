@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     style="@style/vertical_match_LinearLayout">
-    <android.support.v7.widget.Toolbar
+    <androidx.appcompat.widget.Toolbar
         xmlns:android="http://schemas.android.com/apk/res/android"
         style="@style/primary_toolbar"
         android:id="@+id/schedule_input_app_toolbar">
@@ -12,7 +12,7 @@
             style="@style/toolbar_text"
             android:id="@+id/schedule_input_toolbar_title"
             android:text="일정" />
-    </android.support.v7.widget.Toolbar>
+    </androidx.appcompat.widget.Toolbar>
     <EditText
         style="@style/default_match_wrap_Layout"
         android:id="@+id/schedule_input_title_edittext"

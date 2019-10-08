@@ -5,7 +5,7 @@
     xmlns:toos="http://schemas.android.com/tools"
     style="@style/vertical_match_LinearLayout"
     android:background="@color/colorMemo">
-    <android.support.v7.widget.Toolbar
+    <androidx.appcompat.widget.Toolbar
         xmlns:android="http://schemas.android.com/apk/res/android"
         style="@style/primary_toolbar"
         android:id="@+id/schedule_list_app_toolbar">
@@ -18,7 +18,7 @@
             android:id="@+id/schedule_list_toolbar_title"
             android:text="일정"
             />
-    </android.support.v7.widget.Toolbar>
+    </androidx.appcompat.widget.Toolbar>
 
     <FrameLayout
         style="@style/default_match_Layout"
@@ -26,15 +26,15 @@
         android:paddingTop="10dp"
         android:paddingRight="15dp">
 
-        <android.support.v7.widget.RecyclerView
+        <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/schedule_list_recycle"
             style="@style/default_match_Layout"
             android:scrollbars="none"
             toos:listitem="@layout/schedule_filed" />
-        <android.support.design.widget.FloatingActionButton
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/schedule_fab_btn"
             style="@style/fab_btn"
             app:borderWidth="0dp"
-            app:fabSize="normal"></android.support.design.widget.FloatingActionButton>
+            app:fabSize="normal"></com.google.android.material.floatingactionbutton.FloatingActionButton>
     </FrameLayout>
 </LinearLayout>

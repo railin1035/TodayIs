@@ -1,10 +1,10 @@
 package com.ghc.tdi_main.Settings;
 
 import android.content.Intent;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
@@ -12,11 +12,8 @@ import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.ghc.tdi_main.Main.select_main;
 import com.ghc.tdi_main.R;
-import com.google.android.gms.common.annotation.KeepForSdkWithFieldsAndMethods;
 
 public class setting_lock extends AppCompatActivity {
 

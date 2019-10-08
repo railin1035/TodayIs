@@ -5,7 +5,7 @@
     android:background="@color/colorWhite"
     >
     <!--상단 툴바-->
-    <android.support.v7.widget.Toolbar
+    <androidx.appcompat.widget.Toolbar
         xmlns:android="http://schemas.android.com/apk/res/android"
         style="@style/primary_toolbar"
         android:id="@+id/memo_edit_app_toolbar">
@@ -18,7 +18,7 @@
             android:id="@+id/memo_edit_toolbar_title"
             android:text="메모"
             />
-    </android.support.v7.widget.Toolbar>
+    </androidx.appcompat.widget.Toolbar>
     <!--//상단 툴바-->
     <!--뒷 배경-->
     <LinearLayout

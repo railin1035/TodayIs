@@ -3,7 +3,7 @@
     style="@style/vertical_match_LinearLayout"
     android:background="@color/colorWhite">
     <!--상단 툴바-->
-<android.support.v7.widget.Toolbar
+<androidx.appcompat.widget.Toolbar
     xmlns:android="http://schemas.android.com/apk/res/android"
     style="@style/primary_toolbar"
     android:id="@+id/setting_appinfo_app_toolbar">
@@ -16,7 +16,7 @@
         android:id="@+id/setting_appinfo_toolbar_title"
         android:text="어플리케이션 정보"
         />
-</android.support.v7.widget.Toolbar>
+</androidx.appcompat.widget.Toolbar>
     <LinearLayout
         style="@style/vertical_match_LinearLayout"
         android:gravity="center"

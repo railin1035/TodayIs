@@ -1,20 +1,15 @@
 package com.ghc.tdi_main.Main;
 
-import android.content.Context;
 import android.content.Intent;
-import android.os.Build;
-import android.os.PowerManager;
-import android.support.v7.app.AppCompatActivity;
+
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.ghc.tdi_main.Display.Display_main;
 import com.ghc.tdi_main.Login.EurnSignUp;
-import com.ghc.tdi_main.Schedule.schedule_input;
 import com.ghc.tdi_main.R;
 import com.ghc.tdi_main.Memo.memo_list;
 import com.ghc.tdi_main.Schedule.schedule_list;
